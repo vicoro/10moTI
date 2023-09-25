@@ -14,7 +14,7 @@
 		<!--LOGO NORMAL--->
 		<span class="logo-lg">
 			<img src="vistas/img/plantilla/logo-blanco-lineal.jpeg" class="img-responsive"
-			 style="padding:1px 0px;">
+			 style="padding:1px 0px;"> 
 			
 		</span>
 	</a>
