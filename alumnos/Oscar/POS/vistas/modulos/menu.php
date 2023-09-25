@@ -1,71 +1,119 @@
 <aside class="main-sidebar">
 
     <section class="sidebar">
-
+        
         <ul class="sidebar-menu">
 
             <li class="active">
 
-                <a href="">
+                <a href="inicio">
 
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa fa-home"></i>
                     <span>Inicio</span>
+
                 </a>
 
             </li>
+
             <li>
 
-                <a href="">
+                <a href="usuarios">
 
-                    <i class="fa-solid fa-user" style="font-size:15px"></i>
+                    <i class="fa fa-user"></i>
                     <span>Usuarios</span>
 
                 </a>
 
             </li>
+
             <li>
 
-                <a href="">
+                <a href="categorias">
 
-                    <i class="fa-solid fa-list" style="font-size:15px"></i>
+                    <i class="fa fa-th"></i>
                     <span>Categorías</span>
-                    
+
                 </a>
 
             </li>
+
             <li>
 
-                <a href="">
+                <a href="productos">
 
-                    <i class="fa-brands fa-product-hunt"style="font-size:15px"></i>
+                    <i class="fa fa-product-hunt"></i>
                     <span>Productos</span>
-                    
+
                 </a>
 
             </li>
+
             <li>
 
-                <a href="">
+                <a href="clientes">
 
-                    <i class="fa-solid fa-user" style="font-size:15px"></i>
+                    <i class="fa fa-users"></i>
                     <span>Clientes</span>
-                    
+
                 </a>
 
             </li>
+
             <li class="treeview">
 
-                <a href="">
+                <a href="#">
 
-                    <i class="fa-solid fa-ellipsis-vertical" style="font-size:15px"></i>
+                    <i class="fa fa-list-ul"></i>
+
                     <span>Ventas</span>
+
                     <span class="pull-right-container">
-                        <i class="fa-solid fa-angle-left pull-right"></i>
+
+                        <i class="fa fa-angle-left pull-right"></i>
+
                     </span>
-                    
+
                 </a>
 
+                <ul class="treeview-menu">
+
+                    <li>
+
+                        <a href="ventas">
+
+                            <i class="fa fa-circle-o"></i>
+                            <span>Administrar ventas</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="crear-venta">
+
+                            <i class="fa fa-circle-o"></i>
+                            <span>Crear Venta</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="reportes">
+
+                            <i class="fa fa-circle-o"></i>
+                            <span>Reporte de ventas</span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
             </li>
+
         </ul>
 
     </section>
