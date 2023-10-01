@@ -30,7 +30,7 @@
             <thead>
               
               <tr>
-                <th style="width:10px">Id</th>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Usuario</th>
                 <th>Foto</th>
@@ -173,14 +173,6 @@
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary">Guardar usuarios</button>
               </div>
-
-              <?php
-                $crearUsusario = new ControladorUsuarios();
-                $crearUsusario -> ctrCrearUsuario();
-
-
-              ?>
-
               </form>
               </div>
 

@@ -26,7 +26,7 @@
       <?php
 
       $login = new ControladorUsuarios();
-      $login -> ctlIngresoUsuario();
+      $login -> ctrIngresoUsuario();
       
       ?>
     </form>
