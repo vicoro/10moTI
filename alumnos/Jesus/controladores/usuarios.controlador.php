@@ -1,7 +1,7 @@
 <?php
 class ControladorUsuarios{
 
-    public function ctlIngresoUsuario(){
+   static public function ctrIngresoUsuario(){
 
         if(isset($_POST["ingUsuario"])){
             
@@ -15,7 +15,16 @@ class ControladorUsuarios{
 
                 $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-                var_dump($respuesta["usuario"]);
+                if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+                
+                    $_SESSION["iniciarSesion"]= "ok";
+                    echo'<script>
+                        window.location = "inicio";
+                    </script>';
+                    
+                }else{
+                    echo'<br><div class="alert-danger">Error a intentarlo </div>';
+                }
 
             }
         }
