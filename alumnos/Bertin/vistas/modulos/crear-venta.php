@@ -1,19 +1,16 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
-      
       Crear venta
-    
     </h1>
 
     <ol class="breadcrumb">
       
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
       <li class="active">Crear venta</li>
-    
+
     </ol>
 
   </section>
@@ -35,29 +32,7 @@
         </div>
       </div>
       <div class="box-body">
-      <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Nombre del producto</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" >
-     </div>  
-     <div class="mb-3">
-      <label for="formFile" class="form-label">Default file input example</label>
-      <input class="form-control" type="file" id="formFile">
-     </div>
-     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Cantidad</label>
-      <input type="number" class="form-control" id="exampleFormControlInput1">
-     </div> 
-     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Nombre del producto</label>
-      <input type="number" class="form-control" id="exampleFormControlInput1" >
-     </div>  
-     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Precio</label>
-      <input type="number" class="form-control" id="exampleFormControlInput1">
-     </div> 
-
-
-
+        Start creating your amazing application!
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
