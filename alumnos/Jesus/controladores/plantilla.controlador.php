@@ -6,3 +6,4 @@ static public function ctrPlantilla(){
 }
 
 }
+
