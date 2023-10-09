@@ -3392,23 +3392,23 @@ table.text-center th {
 .register-logo a {
   color: #444;
 }
+
 .login-page,
 .register-page {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 30, 50, 1));
+  background: linear-gradient(rgba(0, 0, 0, 1), rgb(0, 30, 50, 1));
 }
 
-.login-page #back{
+.login-page .back {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  /*cambiar la imagen del fondo de pantalla en PLANTILA.PHP */
-  /*background: url(../../img/plantilla/r2.jpg);*/
-  background-size:cover; 
-  overflow:hidden;
+  /* Cambiar la imagen del fondo de pantalla */
+  /*background: url(../../img/plantilla/back.png);*/
+  background-size: cover;
+  overflow: hidden;
   z-index: -1;
-
 }
 
 

@@ -1,15 +1,11 @@
-<div id="back">
-  
-</div>
-
+<div class="back"></div>
 
 <div class="login-box">
 
   <div class="login-logo">
 
 <!---cambiar la imagen del formulario---->
-   <img src="vistas/img/plantilla/icono-blanco.png" class="img-responsive" 
-   style="padding: 0px 120px 0px 120px "> 
+   <img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding: 30px 80px 0px 80px"> 
 
   </div>
 
@@ -17,7 +13,7 @@
 
     <p class="login-box-msg">Ingresar al sistema</p>
 
-    <form  method="post">
+    <form method="post">
 
       <div class="form-group has-feedback">
 
