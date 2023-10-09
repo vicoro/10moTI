@@ -30,6 +30,9 @@ session_start();
     <!-- DataTables -->
     <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+    
+    <!-- sweetalert -->
+      <link rel="stylesheet" href="vistas/plugins/sweetalert/sweetalert2.css">
 
   <!--Plugins JavaScript -->
   
@@ -50,6 +53,10 @@ session_start();
 <script src="vistas/bower_components/datatables.net/js/responsive.bootstrap.min.js"></script>
 <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
 
+    <!-- sweetalert -->
+    <script src="vistas/plugins/sweetalert/sweetalert2.all.js"  ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
 </head>
 <!-- Cuerpo del documento -->
@@ -61,6 +68,7 @@ session_start();
 
   <?php
 
+if(isset($_SESSION["iniciarsesionSesion"]) && $_SESSION["iniciarsesionSesion"] =="ok"){
 
 
   echo'<div class="wrapper">';
@@ -95,16 +103,22 @@ session_start();
 
   }
 
+  
   //footer
   include "modulos/footer.php";
 
   echo'</div>';
+  
+}else{
+  include "modulos/login.php";
+}
 
   ?>
  
  
 
 <script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/usuarios.js"></script>
 
 </body>
 </html>
