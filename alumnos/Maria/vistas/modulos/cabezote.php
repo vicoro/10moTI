@@ -1,28 +1,30 @@
 <header class="main-header">
-<!--------------------------------------------------
------------------------------------------------
-       		LOGOGTIPO
------------------------------------------------
+<!--------------------------------------------
+       		 LOGOGTIPO
 -----------------------------------------------> 
 	<a href="inicio" class="logo">
+
 		<!--LOGO MINI--->
 		<span class="logo-mini">
-			<img src="vistas/img/plantilla/logo.jpg" class="img-responsive" style="padding:10px;"> 
+
+			<img src="vistas/img/plantilla/mini.png" class="img-responsive" style="padding: 10px"> 
 			
 		</span>
 
 		<!--LOGO NORMAL--->
 		<span class="logo-lg">
-			<img src="vistas/img/plantilla/logo.png" class="img-responsive"
-			 style="padding:1px 0px;"> 
+
+			<img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding: 10px 0px"> 
 			
 		</span>
 	</a>
-<!--------------------------------------------------
------------------------------------------------
+
+	
+<!---------------------------------------------
         BARRA DE NAVEGACION
------------------------------------------------
------------------BOTON DE NAVEGACION----------------> 
+----------------------------------------------->
+
+<!---------------BOTON DE NAVEGACION----------------> 
 <nav class="navbar navbar-static-top" role="navigation">
 
 	<!-----------------BOTON DE NAVEGACION---------------->
@@ -58,7 +60,6 @@
 					  <span class="hidden-xs"> <?php echo $_SESSION['nombre']; ?> </span>
 
 					</a>
-
 
 				<!----Dropdown -tog o caja-------->
 					<ul class="dropdown-menu">

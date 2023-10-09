@@ -11,16 +11,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Inventario Boutique "Velázquez"</title>
+  <title>Rich Vagos "Velázquez"</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
-  <link rel="icon" href="vistas/img/plantilla/icono-blanco.png">
+  <link rel="icon" href="vistas/img/plantilla/mini.png"> <!--Imagen del icono del sistema--->
+
    <!--------------------------------------------------
-      -----------------------------------------------
                   PLUGINS DE CSS
-      -----------------------------------------------
       -----------------------------------------------> 
   
   <!-- Bootstrap 3.3.7 -->
@@ -46,9 +45,7 @@
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/resposive.bootstrap.min.css">
 
   <!--------------------------------------------------
-      -----------------------------------------------
                   PLUGINS DE JAVASCRIPT
-      -----------------------------------------------
       -----------------------------------------------> 
   <!-- jQuery 3 -->
   <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
@@ -71,12 +68,13 @@
 
   <!--Sweetalet2--->
   <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <!--Explore 11--->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
 
 </head>
-<!--------------------------------------------------
------------------------------------------------
+<!---------------------------------------------
         CUERPO DEL DOCUMENTO
------------------------------------------------
 -----------------------------------------------> 
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 
