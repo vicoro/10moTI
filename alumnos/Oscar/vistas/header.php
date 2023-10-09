@@ -73,6 +73,8 @@
     <!----------Sweet Alert----->
     <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
 </head>
 
  <!-- ===================================
