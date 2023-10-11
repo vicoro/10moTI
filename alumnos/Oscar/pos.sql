@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-10-2023 a las 23:50:35
+-- Tiempo de generación: 11-10-2023 a las 21:54:05
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `id` int(11) NOT NULL,
+  `categoria` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id`, `categoria`) VALUES
+(1, 'Equipos electromecánicos'),
+(2, 'Taladros'),
+(3, 'Andamios'),
+(4, 'Generadores de energía'),
+(5, 'Equipos para construcción');
 
 -- --------------------------------------------------------
 
@@ -45,12 +68,18 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(16, 'Kathi Damian', 'kathi', '$2a$07$asxx54ahjppf45sd87a5autG1WnWbwacrrXefZLvKHd1uuLEasji2', 'Admininstrador', 'vistas/img/usuarios/kathi/103.jpg', 1, '2023-10-05 18:47:22', '2023-10-03 23:26:36'),
-(21, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Especial', '', 0, '2023-10-04 15:59:44', '2023-10-04 20:22:02');
+(16, 'Kathi Damian', 'kathi', '$2a$07$asxx54ahjppf45sd87a5autG1WnWbwacrrXefZLvKHd1uuLEasji2', 'Admininstrador', 'vistas/img/usuarios/kathi/103.jpg', 1, '2023-10-11 13:03:23', '2023-10-03 23:26:36'),
+(21, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Especial', '', 0, '2023-10-10 20:50:11', '2023-10-04 20:22:02');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -61,6 +90,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
