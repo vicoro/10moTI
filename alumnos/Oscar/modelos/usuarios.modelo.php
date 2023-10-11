@@ -36,7 +36,7 @@ class ModeloUsuarios{
     }
 
     /*========================================
-    MOSTRAR USUARIOS
+    INGRESAR USUARIOS
     ========================================*/
 
     static public function mdlIngresarUsuario($tabla,$datos){
