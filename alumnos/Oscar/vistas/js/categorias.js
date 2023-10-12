@@ -28,3 +28,34 @@ $(document).on("click", ".btnEditarCategoria", function(){
     })
 
 })
+
+/*========================
+BORRAR CATEGORIA
+=========================*/
+$(".btnEliminarCategoria").click(function(){
+    
+    var idCategoria = $(this).attr("idCategoria");
+
+    swal.fire({
+
+        title: '<span style="font-size: 30px;">¿Está seguro?</span>',
+        text: " ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: '<span style="font-size: 20px;">Cancelar</span>',
+        confirmButtonText: '<span style="font-size: 20px;">Si, borrar categoría!</span>',
+        width: 400
+    }).then(function(result){
+
+        if (result.value) {
+
+            window.location = "index.php?ruta=categorias&idCategoria="+idCategoria;
+
+            
+        }
+
+    })
+
+})

@@ -57,7 +57,7 @@
               $item = null;
               $valor = null;
 
-              $categorias = ControladorCategoias::ctrMostrarCategorias($item, $valor);
+              $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
               foreach ($categorias as $key => $value) {
                 
@@ -73,7 +73,7 @@
 
                       <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                      <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>
 
                     </div>
 
@@ -156,7 +156,7 @@
 
       <?php
 
-        $crearCategoria = new ControladorCategoias();
+        $crearCategoria = new ControladorCategorias();
         $crearCategoria -> ctrCrearCategoria();
 
       ?>
@@ -230,7 +230,7 @@
 
       <?php
 
-        $editarCategoria = new ControladorCategoias();
+        $editarCategoria = new ControladorCategorias();
         $editarCategoria -> ctrEditarCategoria();
 
       ?>
@@ -242,4 +242,11 @@
   </div>
 
 </div>
+
+<?php
+
+ $borrarCategoria = new ControladorCategorias();
+ $borrarCategoria -> ctrBorrarCategoria();
+
+?>
 
