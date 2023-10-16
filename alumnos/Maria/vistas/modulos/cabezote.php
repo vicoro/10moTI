@@ -7,14 +7,14 @@
 		<!--LOGO MINI--->
 		<span class="logo-mini">
 
-			<img src="vistas/img/plantilla/mini.png" class="img-responsive" style="padding: 10px"> 
+			<img src="vistas/img/plantilla/mini.png" class="img-responsive" style="padding: 0px"> 
 			
 		</span>
 
 		<!--LOGO NORMAL--->
 		<span class="logo-lg">
 
-			<img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding: 10px 0px"> 
+			<img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding: 0px 0px"> 
 			
 		</span>
 	</a>
