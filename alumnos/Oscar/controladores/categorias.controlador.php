@@ -1,6 +1,6 @@
 <?php
 
-class ControladorCategoias{
+class ControladorCategorias{
 
     /*===========================
     CREAR CATEGORIAS
@@ -160,5 +160,47 @@ class ControladorCategoias{
 
     }
 
+    /*===========================
+    BORRAR CATEGORIAS
+    ===========================*/
+    static public function ctrBorrarCategoria(){
+
+        if(isset($_GET["idCategoria"])){
+
+            $tabla ="Categorias";
+            $datos = $_GET["idCategoria"];
+          
+            $respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
+
+            if($respuesta == "ok"){
+
+                        echo '<script>
+                    
+                                Swal.fire({
+
+                                    icon: "success",
+                                    title: "¡La categoría ha sido borrada correctamente!",
+                                    text: " ",
+                                    showConfirmButton: true,
+                                    confirmButtonText: "OK",
+                                    closeOnConfirm: false
+
+                                }).then((result)=>{
+
+                                    if(result.value){
+
+                                        window.location = "categorias";
+
+                                    }
+
+                                });
+                        
+                            </script>';
+
+                }
+
+          }
+
+    }
 
 }
