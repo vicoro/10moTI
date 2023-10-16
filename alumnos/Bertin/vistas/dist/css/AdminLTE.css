@@ -814,7 +814,7 @@ a:focus {
   float: left;
   width: 35px;
   height: 35px;
-  border-radius: 50%;
+  border-radius: 20%;
   text-align: center;
   line-height: 35px;
 }
@@ -3392,9 +3392,18 @@ table.text-center th {
 .register-logo a {
   color: #444;
 }
-.login-page,
-.register-page {
-  background: linear-gradient(rgba(0,0,0,1), rgba(0,30,50,1));
+
+.login-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(ellipse, rgb(216, 138, 203), rgb(255, 0, 157));
+  background-size: cover;
+  overflow: hidden;
+  z-index:-1;
+
 }
 
 
@@ -3412,9 +3421,10 @@ table.text-center th {
 }
 .login-box-body,
 .register-box-body {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
   border-top: 0;
+  border-radius: 20px;
   color: #666;
 }
 .login-box-body .form-control-feedback,

@@ -1,23 +1,15 @@
 <div class="content-wrapper">
-
   <section class="content-header">
-    
     <h1>
-      
-      Administrar ventas
-    
+      Administrar ventas  
     </h1>
-
     <ol class="breadcrumb">
-      
-      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
+     
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>    
       <li class="active">Administrar ventas</li>
-    
+
     </ol>
-
   </section>
-
   <!-- Main content -->
   <section class="content">
 
@@ -35,23 +27,7 @@
         </div>
       </div>
       <div class="box-body">
-      <table class="table display" id="mitabla">
-          <tr>
-              <th>imagen</th>
-              <th>descripcion</th>
-          </tr>
-          <tr>
-              <td>Dato 1</td>
-              <td>Dato 2</td>
-          </tr>
-          <tr>
-              <td>Dato 4</td>
-              <td>Dato 5</td>
-          </tr>
-        </table>
-
-
-
+        Start creating your amazing application!
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
@@ -60,7 +36,6 @@
       <!-- /.box-footer-->
     </div>
     <!-- /.box -->
-
   </section>
   <!-- /.content -->
 </div>
