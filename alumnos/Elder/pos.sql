@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-10-2023 a las 18:52:30
+-- Tiempo de generación: 21-10-2023 a las 23:48:00
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -42,7 +42,8 @@ INSERT INTO `categorias` (`id`, `categoria`) VALUES
 (1, 'Escritura'),
 (2, 'Papel'),
 (3, 'Oficina'),
-(4, 'Arte');
+(4, 'Arte'),
+(5, 'Escolar');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`) VALUES
-(1, 1, '101', 'Aspiradpra indstrial', '', 20, 1500, 2000, 0),
+(1, 1, '101', 'Aspiradora industrial', '', 20, 1500, 2000, 0),
 (2, 1, '102', 'Plato flotante', '', 20, 4500, 5000, 0),
 (3, 1, '103', 'Compresor de aire', '', 20, 3500, 4000, 0),
 (4, 1, '104', 'cortadora de adobe', '', 20, 3200, 3700, 0),
@@ -116,7 +117,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/153.jpg', 1, '2023-10-19 14:36:21', '2023-09-25 21:44:06'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/153.jpg', 1, '2023-10-21 18:00:23', '2023-09-25 21:44:06'),
 (20, 'Karla Juarez', 'karla', '$2a$07$asxx54ahjppf45sd87a5au7h1SYmZx5dn51nPghKV7g9XuPyG01yC', 'Vendedor', 'vistas/img/usuarios/karla/918.jpg', 1, '2023-10-05 12:54:42', '2023-09-30 07:39:12'),
 (24, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auLd2AxYsA/2BbmGKNk2kMChC3oj7V0Ca', 'Vendedor', 'vistas/img/usuarios/ana/653.jpg', 1, '2023-10-05 13:07:01', '2023-10-05 17:55:48'),
 (25, 'Juan Fernando Urrego', 'juan', '$2a$07$asxx54ahjppf45sd87a5auwRi.z6UsW7kVIpm0CUEuCpmsvT2sG6O', 'Especial', 'vistas/img/usuarios/juan/588.jpg', 1, '0000-00-00 00:00:00', '2023-10-05 17:56:31'),
