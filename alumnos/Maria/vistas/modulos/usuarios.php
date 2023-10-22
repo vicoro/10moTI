@@ -208,7 +208,7 @@
 
                             <p class="help-block">Peso máximo de la foto 2MB</p>
 
-                            <img src="vistas/img/usuarios/default/anonymous.jpeg" class="img-thumbnail previsualizar" width="100px">
+                            <img src="vistas/img/usuarios/default/usuario.png" class="img-thumbnail previsualizar" width="100px">
                        
                         </div>
 
@@ -333,11 +333,11 @@
 
                             <div class="panel">SUBIR FOTO</div>
 
-                            <input type="file" class="nuevaFoto" name="editarFoto">
+                            <input type="file" id="nuevaFoto" name="editarFoto">
 
                             <p class="help-block">Peso máximo de la foto 2MB</p>
 
-                            <img src="vistas/img/usuarios/default/anonymous.jpeg" class="img-thumbnail previsualizar" width="100px">
+                            <img src="vistas/img/usuarios/default/usuario.png" class="img-thumbnail previsualizar" width="100px">
 
                             <input type="hidden" name="fotoActual" id="fotoActual">
 
