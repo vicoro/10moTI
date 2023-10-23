@@ -4,7 +4,7 @@
     
     <h1>
       
-      Administrar clientes
+      Crear venta
     
     </h1>
 
@@ -12,7 +12,7 @@
       
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar clientes</li>
+      <li class="active">Crear venta</li>
     
     </ol>
 
