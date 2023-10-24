@@ -34,7 +34,7 @@
 
       <div class="box-body">
 
-        <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
+        <table class="table table-bordered table-striped dt-responsive tablas">
 
           <thead>
 
@@ -55,7 +55,7 @@
 
           </thead>
 
-          <!--<tbody>
+          <tbody>
 
           <?php
 
@@ -95,11 +95,11 @@
               </td>
 
             </tr>';
-         }
+           }
 
           ?>         
 
-          </tbody> -->
+          </tbody>
 
         </table>
       
