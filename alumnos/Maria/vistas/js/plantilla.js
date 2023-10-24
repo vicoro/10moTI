@@ -38,3 +38,13 @@
         }
     }
 });
+
+/*--======================================
+//iCheck for checkbox and radio inputs   
+======================================--*/
+
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+        checkboxClass: 'icheckbox_minimal-red',
+        radioClass   : 'iradio_minimal-red'
+      })
