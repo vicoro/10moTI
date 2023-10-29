@@ -1,4 +1,4 @@
-*!
+/*!
  *   AdminLTE v2.4.0
  *   Author: Almsaeed Studio
  *	 Website: Almsaeed Studio <https://adminlte.io>
@@ -3385,44 +3385,35 @@ table.text-center th {
 .register-logo {
   font-size: 35px;
   text-align: center;
-  margin-bottom: -30px;
+  margin-bottom: 25px;
   font-weight: 300;
-
 }
-/*Oscar*/
-.login-logo img{
-  margin: auto;
-  border-radius: 50%;
-  box-shadow: 2px 4px 15px 0 #000;
-  width: 200px;
-}
-
 .login-logo a,
 .register-logo a {
   color: #444;
 }
 .login-page,
 .register-page {
-  background: linear-gradient(to right, #ff904b, #559f9e);
-  overflow: auto;
+  background: linear-gradient(rgba(0,0,0,1), rgba(0,30,50,1));
 }
-/*Oscar
-.login-page .back{
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-background: url(../../img/plantilla/back7.PNG);
-background-size: cover;
-overflow: hidden;
 
-}*/
+.login-page #back{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background: url(../../img/plantilla/back.png);
+  background-size:cover;
+  overflow:hidden;
+  z-index:-1;
+
+}
+
 .login-box,
 .register-box {
-  width: 500px;
+  width: 360px;
   margin: 7% auto;
-  
 }
 @media (max-width: 768px) {
   .login-box,
@@ -3433,54 +3424,21 @@ overflow: hidden;
 }
 .login-box-body,
 .register-box-body {
-  background: #e2e2e2;
-  /*height: 350px; oscar editado*/
+  background: #fff;
   padding: 20px;
   border-top: 0;
   color: #666;
-  border-radius: 2px;
-  box-shadow: 2px 4px 30px 0 #000;
 }
 .login-box-body .form-control-feedback,
 .register-box-body .form-control-feedback {
-  color: #000;
+  color: #777;
 }
-/*oscar*/
-.form-group #input1{
-  color: #000;
-  font-size: 20px;
-  height: 38px;
-  border-radius: 5px;
-margin-top: 30px;
-}
-
-.row #ingresar{
-  margin-bottom: 10px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 5px;
-}
-
-.form-group #input2{
-  color: #000;
-  font-size: 20px;
-  height: 38px;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-/*-------------------*/
-/*------Editado oscar---*/
 .login-box-msg,
 .register-box-msg {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 30px;
-  margin-top: 20px;
+  margin: 0;
   text-align: center;
   padding: 0 20px 20px 20px;
-  color: #0d5177;
 }
-/*-------------------------*/
 .social-auth-links {
   margin: 10px 0;
 }
