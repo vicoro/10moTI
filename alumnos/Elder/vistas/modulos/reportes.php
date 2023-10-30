@@ -1,7 +1,7 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-
+    
     <h1>
       
       Reportes de ventas
@@ -13,7 +13,7 @@
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
       <li class="active">Reportes de ventas</li>
-
+    
     </ol>
 
   </section>

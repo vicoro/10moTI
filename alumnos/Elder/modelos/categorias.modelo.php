@@ -4,113 +4,114 @@ require_once "conexion.php";
 
 class ModeloCategorias{
 
-    /*================================
-    CREAR CATEGORIA
-    ==================================*/
+	/*=============================================
+	CREAR CATEGORIA
+	=============================================*/
 
-    static public function mdlIngresarCategoria($tabla, $datos){
+	static public function mdlIngresarCategoria($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria) VALUES (:categoria)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria) VALUES (:categoria)");
 
-    $stmt->bindParam(":categoria", $datos, PDO::PARAM_STR);
+		$stmt->bindParam(":categoria", $datos, PDO::PARAM_STR);
 
-    if($stmt->execute()){
+		if($stmt->execute()){
 
-        return "ok";
+			return "ok";
 
-    }else{
-   
-        return "error";
-    
-    }
-    
-    $stmt->close();
-    $stmt = null;
+		}else{
 
-    }
+			return "error";
+		
+		}
 
-    /*================================
-    MOSTRAR CATEGORIAS
-    ==================================*/
+		$stmt->close();
+		$stmt = null;
 
-    static public function mdlMostrarCategorias($tabla, $item, $valor){
+	}
 
-        if ($item != null) {
+	/*=============================================
+	MOSTRAR CATEGORIAS
+	=============================================*/
 
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+	static public function mdlMostrarCategorias($tabla, $item, $valor){
 
-            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-    
-            $stmt -> execute();
-    
-            return $stmt -> fetch();            
+		if($item != null){
 
-        }else{
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
-            $stmt -> execute();
+			$stmt -> execute();
 
-            return $stmt -> fetchAll();
+			return $stmt -> fetch();
 
-        }
+		}else{
 
-        $stmt -> close();
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 
-        $stmt = null;
+			$stmt -> execute();
 
-    }
+			return $stmt -> fetchAll();
 
-    /*================================
-    EDITAR CATEGORIA
-    ==================================*/
+		}
 
-    static public function mdlEditarCategoria($tabla, $datos){
+		$stmt -> close();
 
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria WHERE id = :id");
-    
-        $stmt -> bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
-        $stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
-    
-        if($stmt->execute()){
-    
-            return "ok";
-    
-        }else{
-       
-            return "error";
-        
-        }
-        
-        $stmt->close();
-        $stmt = null;
-    
-    }
+		$stmt = null;
 
-    /*======================================
-    BORRAR CATEGORIA
-    ====================================== */
+	}
 
-    static public function  mdlBorrarCategoria($tabla, $datos){
+	/*=============================================
+	EDITAR CATEGORIA
+	=============================================*/
 
-        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+	static public function mdlEditarCategoria($tabla, $datos){
 
-        $stmt -> bindParam(":id", $datos, PDO::PARAM_STR);
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria WHERE id = :id");
 
-        if ($stmt -> execute()){
-            
-            return "ok";
+		$stmt -> bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
-        }else{
+		if($stmt->execute()){
 
-            return "error";
+			return "ok";
 
-        }
-        
-        $stmt -> close();
+		}else{
 
-        $stmt = null;
-          
-    }
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	BORRAR CATEGORIA
+	=============================================*/
+
+	static public function mdlBorrarCategoria($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+
+		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 
 }
+
