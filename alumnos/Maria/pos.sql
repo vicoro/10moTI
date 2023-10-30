@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-10-2023 a las 04:12:37
+-- Tiempo de generación: 30-10-2023 a las 01:23:29
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -39,11 +39,12 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `categoria`, `fecha`) VALUES
-(1, 'Accesorios', '2023-10-19 04:05:04'),
+(1, 'Accesorios ', '2023-10-19 04:05:04'),
 (2, 'Chamarras', '2023-10-19 04:05:04'),
 (3, 'Conjuntos', '2023-10-19 04:05:08'),
 (4, 'Playeras', '2023-10-19 04:05:08'),
-(5, 'Tenis', '2023-10-19 04:06:14');
+(5, 'Tenis', '2023-10-19 04:06:14'),
+(6, 'Sudaderas', '2023-10-29 03:12:16');
 
 -- --------------------------------------------------------
 
@@ -69,31 +70,34 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`, `fecha`) VALUES
-(1, 1, '101', 'Anillo', '', 100, 120, 300, 0, '0000-00-00 00:00:00'),
-(2, 1, '102', 'Cadena con dije plata', '', 80, 120, 350, 0, '0000-00-00 00:00:00'),
-(3, 1, '103', 'Juego de cadena y arretes', '', 50, 200, 400, 0, '0000-00-00 00:00:00'),
-(4, 1, '104', 'Gorra varios colores\r\n', '', 70, 120, 250, 0, '0000-00-00 00:00:00'),
-(5, 1, '105', 'Gorro varios colores', '', 40, 110, 220, 0, '0000-00-00 00:00:00'),
-(6, 2, '201', 'Chamarra negra', '', 300, 250, 550, 0, '0000-00-00 00:00:00'),
-(7, 2, '202', 'Chamarra blanca', '', 300, 250, 550, 0, '0000-00-00 00:00:00'),
-(8, 2, '203', 'Chamarra gris', '', 300, 250, 550, 0, '0000-00-00 00:00:00'),
-(9, 2, '204', 'Chamarra rosa', '', 300, 250, 550, 0, '0000-00-00 00:00:00'),
-(10, 2, '205\r\n', 'Chamarra azul', '', 300, 250, 550, 0, '0000-00-00 00:00:00'),
-(11, 3, '301', 'Conjunto short y blusa', '', 200, 250, 500, 0, '0000-00-00 00:00:00'),
-(12, 3, '302', 'Conjunto negro', '', 200, 300, 650, 0, '0000-00-00 00:00:00'),
-(13, 3, '303', 'Conjunto gris\r\n', '', 200, 300, 650, 0, '0000-00-00 00:00:00'),
-(14, 3, '304', 'Conjunto blanco', '', 200, 300, 650, 0, '0000-00-00 00:00:00'),
-(15, 4, '401', 'Playera negra logo rojo', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(16, 4, '402', 'Playera negro logo azul', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(17, 4, '403\r\n', 'Playera negra logo blanco', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(18, 4, '404', 'Playera negro logo blanco dama', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(19, 4, '405', 'Playera negro logo blanco dama', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(20, 4, '406', 'Playera negro logo dorado RV', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(21, 4, '407', 'Playera negro 2logo blanco RV', '', 350, 150, 400, 0, '0000-00-00 00:00:00'),
-(22, 5, '501', 'Tenis Nike blanco logo Rv GeraMX', '', 300, 400, 950, 0, '0000-00-00 00:00:00'),
-(23, 5, '502', 'Tenis Nike logo dorado', '', 300, 400, 950, 0, '0000-00-00 00:00:00'),
-(24, 5, '503', 'Tenis tipo Jordan  logo blanco', '', 300, 400, 950, 0, '0000-00-00 00:00:00'),
-(25, 5, '504', 'Tenis Nike blanco logo negro RV', '', 300, 400, 950, 0, '0000-00-00 00:00:00');
+(34, 1, '101', 'Anillo Gera MX', 'vistas/img/productos/101/115.jpg', 25, 100, 140, 0, '2023-10-29 02:36:58'),
+(35, 1, '102', 'Cadena plata', 'vistas/img/productos/102/620.jpg', 80, 150, 210, 0, '2023-10-29 02:46:55'),
+(36, 1, '103', 'Juego de cadena y aretes', 'vistas/img/productos/103/227.jpg', 50, 250, 350, 0, '2023-10-29 02:48:43'),
+(37, 1, '104', 'Gorra varios colores', 'vistas/img/productos/104/538.jpg', 70, 150, 210, 0, '2023-10-29 02:49:33'),
+(38, 1, '105', 'Gorro varios colores', 'vistas/img/productos/105/421.jpg', 40, 150, 210, 0, '2023-10-29 02:50:27'),
+(39, 2, '201', 'Chamarra Negra', 'vistas/img/productos/201/258.jpg', 300, 250, 350, 0, '2023-10-29 02:54:45'),
+(40, 2, '202', 'Chamarra Blanca', 'vistas/img/productos/202/583.jpg', 300, 250, 350, 0, '2023-10-29 02:55:15'),
+(41, 2, '203', 'Chamarra Rosa', 'vistas/img/productos/203/526.jpg', 300, 250, 350, 0, '2023-10-29 02:56:07'),
+(42, 2, '204', 'Chamarra Azul Rey', 'vistas/img/productos/204/621.jpg', 300, 250, 350, 0, '2023-10-29 02:57:04'),
+(43, 3, '301', 'Conjunto de short y blusa', 'vistas/img/productos/301/156.jpg', 200, 300, 420, 0, '2023-10-29 02:58:05'),
+(44, 3, '302', 'Conjunto Negro', 'vistas/img/productos/302/208.jpg', 200, 350, 490, 0, '2023-10-29 02:59:07'),
+(45, 3, '303', 'Conjunto Gris', 'vistas/img/productos/303/922.jpg', 200, 350, 490, 0, '2023-10-29 02:59:33'),
+(46, 3, '304', 'Conjunto Blanco', 'vistas/img/productos/304/614.jpg', 200, 350, 490, 0, '2023-10-29 03:00:08'),
+(47, 4, '401', 'Playera Negra logo rojo', 'vistas/img/productos/401/913.jpg', 350, 250, 350, 0, '2023-10-29 03:01:07'),
+(48, 4, '402', 'Playera Negra logo azul', 'vistas/img/productos/402/777.jpg', 350, 250, 350, 0, '2023-10-29 03:02:02'),
+(49, 4, '403', 'Playera Negra logo blanco ', 'vistas/img/productos/403/236.jpg', 350, 250, 350, 0, '2023-10-29 03:02:59'),
+(50, 4, '404', 'Playera Negra logo blanco dama', 'vistas/img/productos/404/957.jpg', 350, 250, 350, 0, '2023-10-29 03:04:08'),
+(51, 4, '405', 'Playera Negra logo blanco dama', 'vistas/img/productos/405/588.jpg', 350, 250, 350, 0, '2023-10-29 03:04:49'),
+(52, 4, '406', 'Playera Negra Dorado', 'vistas/img/productos/406/415.jpg', 350, 250, 350, 0, '2023-10-29 03:05:20'),
+(53, 4, '407', 'Playera Negra 2 logos', 'vistas/img/productos/407/260.jpg', 350, 250, 350, 0, '2023-10-29 03:07:16'),
+(54, 5, '501', 'Tenis Nike blanco 2 logo GeraMx', 'vistas/img/productos/501/823.jpg', 300, 550, 770, 0, '2023-10-29 03:08:23'),
+(55, 5, '502', 'Tenis Nike blanco logo dorado', 'vistas/img/productos/502/663.jpg', 300, 550, 770, 0, '2023-10-29 03:09:14'),
+(56, 5, '503', 'Tenis Nike Jordan logo blanco', 'vistas/img/productos/503/122.jpg', 300, 550, 770, 0, '2023-10-29 03:10:06'),
+(57, 5, '504', 'Tenis Nike blanco logo negro RV', 'vistas/img/productos/504/523.jpg', 300, 550, 770, 0, '2023-10-29 03:10:46'),
+(58, 6, '601', 'Sudadera Negra RV ', 'vistas/img/productos/601/410.jpg', 250, 300, 420, 0, '2023-10-29 03:15:48'),
+(59, 6, '602', 'Sudadera Blanca RV ', 'vistas/img/productos/602/931.jpg', 250, 300, 420, 0, '2023-10-29 03:16:53'),
+(60, 6, '603', 'Sudadera Negra 2 logos RV ', 'vistas/img/productos/603/847.jpg', 250, 300, 420, 0, '2023-10-29 03:17:42'),
+(61, 6, '604', 'Sudadera negro y blanco 2 logos RV ', 'vistas/img/productos/604/899.jpg', 250, 300, 420, 0, '2023-10-29 03:18:24');
 
 -- --------------------------------------------------------
 
@@ -118,11 +122,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(2, 'Usuario Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Administrador', 'vistas/img/usuarios/admin/741.jpg', 1, '2023-10-06 21:39:09', '2023-09-25 21:43:27'),
-(33, 'Juan Fernando Urrego', 'juan', '$2a$07$asxx54ahjppf45sd87a5au.U/M0caGNRi1j0bgxZqVwBDctNLt11O', 'Vendedor', 'vistas/img/usuarios/juan/251.jpg', 1, '2023-10-17 18:57:30', '2023-10-07 20:05:30'),
-(34, 'Julio Gomez', 'julio', '$2a$07$asxx54ahjppf45sd87a5aub5nGP0VwzLwk9mYKNeU59ocPXY/HdwK', 'Especial', 'vistas/img/usuarios/julio/153.png', 1, '2023-10-07 15:09:31', '2023-10-07 20:06:13'),
-(35, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Vendedor', 'vistas/img/usuarios/ana/338.png', 1, '2023-10-07 15:08:56', '2023-10-07 20:06:58'),
-(36, 'Maria Velázquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Administrador', 'vistas/img/usuarios/maria/378.jpg', 1, '2023-10-20 23:47:50', '2023-10-07 20:08:05');
+(2, 'Usuario Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Administrador', 'vistas/img/usuarios/admin/621.png', 1, '2023-10-06 21:39:09', '2023-09-25 21:43:27'),
+(33, 'Juan Fernando Urrego', 'juan', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Vendedor', 'vistas/img/usuarios/juan/213.png', 1, '2023-10-17 18:57:30', '2023-10-07 20:05:30'),
+(34, 'Julio Gomez', 'julio', '$2a$07$asxx54ahjppf45sd87a5auRajNP0zeqOkB9Qda.dSiTb2/n.wAC/2', 'Especial', 'vistas/img/usuarios/julio/585.jpg', 1, '2023-10-28 00:32:14', '2023-10-07 20:06:13'),
+(35, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Vendedor', 'vistas/img/usuarios/ana/101.jpg', 1, '2023-10-07 15:08:56', '2023-10-07 20:06:58'),
+(43, 'Maria Velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Administrador', 'vistas/img/usuarios/maria/278.jpg', 1, '2023-10-28 00:33:43', '2023-10-28 05:33:19');
 
 --
 -- Índices para tablas volcadas
@@ -154,19 +158,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
