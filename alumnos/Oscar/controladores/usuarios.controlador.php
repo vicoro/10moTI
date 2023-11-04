@@ -69,7 +69,7 @@ class ControladorUsuarios{
 						swal({
 	
 							type: "info",
-							title: "¡Usuario no activado!",
+							title: "¡Usuario no activo!",
 							showConfirmButton: true,
 							confirmButtonText: "Cerrar"
 	
