@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-10-2023 a las 00:49:34
+-- Tiempo de generación: 05-11-2023 a las 19:55:54
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -44,6 +44,31 @@ INSERT INTO `categorias` (`id`, `categoria`) VALUES
 (3, 'Oficina'),
 (4, 'Organizacion'),
 (5, 'Embalaje');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `documento` int(11) NOT NULL,
+  `email` text COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` text COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `compras` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`) VALUES
+(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 0);
 
 -- --------------------------------------------------------
 
@@ -109,10 +134,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-10-29 19:45:26', '2023-09-25 21:44:06'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-11-05 14:49:18', '2023-09-25 21:44:06'),
 (24, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auLd2AxYsA/2BbmGKNk2kMChC3oj7V0Ca', 'Vendedor', 'vistas/img/usuarios/ana/875.png', 1, '2023-10-05 13:07:01', '2023-10-05 17:55:48'),
 (27, 'Carmen Pineda', 'carmen', '$2a$07$asxx54ahjppf45sd87a5auU.7XJYQrZScY96s9MPVNgh6SXWD95a6', 'Administrador', 'vistas/img/usuarios/carmen/371.jpg', 1, '2023-10-26 18:15:05', '2023-10-26 23:13:53'),
-(33, 'Lauro Perez', 'lauro', '$2a$07$asxx54ahjppf45sd87a5aue2Pl9yDwLnSeE2dYXQHSEgi5YKTjtuy', 'Administrador', 'vistas/img/usuarios/lauro/750.png', 1, '0000-00-00 00:00:00', '2023-10-26 23:44:33'),
 (34, 'Oscar Arellano', 'oscar', '$2a$07$asxx54ahjppf45sd87a5au/bu4Ick41GRhbhIEPg0Nvajd22gNWwy', 'Administrador', 'vistas/img/usuarios/oscar/980.png', 1, '0000-00-00 00:00:00', '2023-10-27 00:36:03'),
 (35, 'Elder Pineda', 'elder', '$2a$07$asxx54ahjppf45sd87a5auK/kW3QvJdE4err5ztrzFX6f26VpOuge', 'Especial', 'vistas/img/usuarios/elder/413.jpg', 1, '2023-10-26 19:47:41', '2023-10-27 00:47:21'),
 (36, 'maria velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5au/styESZTpqxpFPzgJF99YaIo877LNdy', 'Administrador', '', 0, '0000-00-00 00:00:00', '2023-10-30 00:46:55');
@@ -125,6 +149,12 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`,
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -150,6 +180,12 @@ ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -159,7 +195,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

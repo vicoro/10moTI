@@ -130,7 +130,9 @@ $(".tablas").on("click", ".btnActivar", function(){
       
 		}
 
-	})
+      }
+
+  	)
 
   	if(estadoUsuario == 0){
 
