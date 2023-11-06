@@ -1,5 +1,5 @@
 /*=============================================
-CARGAR LA TABLA DINÁMICA DE PRODUCTOS
+CARGAR LA TABLA DINÁMICA DE PRODUCTOSssss
 =============================================*/
 
 // $.ajax({
