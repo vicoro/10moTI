@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-10-2023 a las 01:23:29
+-- Tiempo de generación: 06-11-2023 a las 01:16:37
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -49,6 +49,33 @@ INSERT INTO `categorias` (`id`, `categoria`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `documento` int(11) NOT NULL,
+  `email` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `compras` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`, `fecha`) VALUES
+(1, 'Juan Villegas', 8161123, 'juan@hotmail.com', '(301) 391-3456', 'Calle 45F #23 - 4s', '2023-11-03', 0, '2023-11-04 04:40:00'),
+(5, 'Maria Velazquez', 101, 'maria@hotmail.com', '(767) 104-7745', 'Calle Agustin de Iturbide #18 Col. Lazaro Cardenas ', '1997-05-30', 0, '2023-11-06 01:04:26'),
+(6, 'Brindian Mercado ', 102, 'brindian@gmail.com', '(767) 109-0445', 'Calle Antonio del Castillo #320', '1996-12-13', 0, '2023-11-06 01:10:43');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `productos`
 --
 
@@ -70,7 +97,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`, `fecha`) VALUES
-(34, 1, '101', 'Anillo Gera MX', 'vistas/img/productos/101/115.jpg', 25, 100, 140, 0, '2023-10-29 02:36:58'),
+(34, 1, '101', 'Anillo Gera MX', 'vistas/img/productos/101/115.jpg', 25, 250, 350, 0, '2023-10-29 02:36:58'),
 (35, 1, '102', 'Cadena plata', 'vistas/img/productos/102/620.jpg', 80, 150, 210, 0, '2023-10-29 02:46:55'),
 (36, 1, '103', 'Juego de cadena y aretes', 'vistas/img/productos/103/227.jpg', 50, 250, 350, 0, '2023-10-29 02:48:43'),
 (37, 1, '104', 'Gorra varios colores', 'vistas/img/productos/104/538.jpg', 70, 150, 210, 0, '2023-10-29 02:49:33'),
@@ -126,7 +153,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`,
 (33, 'Juan Fernando Urrego', 'juan', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Vendedor', 'vistas/img/usuarios/juan/213.png', 1, '2023-10-17 18:57:30', '2023-10-07 20:05:30'),
 (34, 'Julio Gomez', 'julio', '$2a$07$asxx54ahjppf45sd87a5auRajNP0zeqOkB9Qda.dSiTb2/n.wAC/2', 'Especial', 'vistas/img/usuarios/julio/585.jpg', 1, '2023-10-28 00:32:14', '2023-10-07 20:06:13'),
 (35, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Vendedor', 'vistas/img/usuarios/ana/101.jpg', 1, '2023-10-07 15:08:56', '2023-10-07 20:06:58'),
-(43, 'Maria Velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Administrador', 'vistas/img/usuarios/maria/278.jpg', 1, '2023-10-28 00:33:43', '2023-10-28 05:33:19');
+(43, 'Maria Velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Administrador', 'vistas/img/usuarios/maria/278.jpg', 1, '2023-11-01 22:34:53', '2023-10-28 05:33:19');
 
 --
 -- Índices para tablas volcadas
@@ -136,6 +163,12 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`,
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -158,6 +191,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
