@@ -1,7 +1,7 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-
+    
     <h1>
       
       Tablero
@@ -15,7 +15,7 @@
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
       <li class="active">Tablero</li>
-
+    
     </ol>
 
   </section>

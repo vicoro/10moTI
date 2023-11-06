@@ -1,7 +1,7 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-
+    
     <h1>
       
       Administrar categorías
@@ -13,7 +13,7 @@
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
       <li class="active">Administrar categorías</li>
-
+    
     </ol>
 
   </section>
@@ -23,9 +23,9 @@
     <div class="box">
 
       <div class="box-header with-border">
-
+  
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
-
+          
           Agregar categoría
 
         </button>
@@ -33,110 +33,110 @@
       </div>
 
       <div class="box-body">
+        
+       <table class="table table-bordered table-striped dt-responsive tablas">
+         
+        <thead>
+         
+         <tr>
+           
+           <th style="width:10px">#</th>
+           <th>Categoria</th>
+           <th>Acciones</th>
 
-        <table class="table table-bordered table-striped dt-responsive tablas">
+         </tr> 
 
-          <thead>
+        </thead>
 
-            <tr>
+        <tbody>
+          
+          <tr>
 
-              <th style="width:10px">#</th>
-              <th>categoria</th>
-              <th>Acciones</th>
+            <td>1</td>
 
-            </tr>
+            <td>EQUIPOS ELECTROMECÁNICOS</td>
 
-          </thead>
+            <td>
 
-          <tbody>
+              <div class="btn-group">
+                  
+                <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+
+                <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+
+              </div>  
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>1</td>
+
+            <td>EQUIPOS ELECTROMECÁNICOS</td>
             
-            <tr>
+            <td>
 
-              <td>1</td>
+              <div class="btn-group">
+                  
+                <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
 
-              <td>Papel</td>
-              
-              <td>
+                <button class="btn btn-danger"><i class="fa fa-times"></i></button>
 
-                <div class="btn-group">
+              </div>  
 
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+            </td>
 
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+          </tr>
 
-                </div>
+          <tr>
 
-              </td>
+            <td>1</td>
 
-            </tr>
+            <td>EQUIPOS ELECTROMECÁNICOS</td>
+            
+            <td>
 
-            <tr>
+              <div class="btn-group">
+                  
+                <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
 
-              <td>1</td>
+                <button class="btn btn-danger"><i class="fa fa-times"></i></button>
 
-              <td>Papel</td>
-              
-              <td>
+              </div>  
 
-                <div class="btn-group">
+            </td>
 
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+          </tr>
 
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+        </tbody>
 
-                </div>
+       </table>
 
-              </td>
-
-            </tr>
-
-            <tr>
-
-              <td>1</td>
-
-              <td>Papel</td>
-              
-              <td>
-
-                <div class="btn-group">
-
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-
-                </div>
-
-              </td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-      
       </div>
 
     </div>
 
   </section>
- 
+
 </div>
 
-<!--=========================
+<!--=====================================
 MODAL AGREGAR USUARIO
-==========================-->
+======================================-->
 
 <div id="modalAgregarCategoria" class="modal fade" role="dialog">
-
+  
   <div class="modal-dialog">
 
     <div class="modal-content">
 
       <form role="form" method="post">
 
-        <!--=========================
+        <!--=====================================
         CABEZA DEL MODAL
-        ==========================-->
+        ======================================-->
 
         <div class="modal-header" style="background:#3c8dbc; color:white">
 
@@ -146,35 +146,35 @@ MODAL AGREGAR USUARIO
 
         </div>
 
-        <!--=========================
+        <!--=====================================
         CUERPO DEL MODAL
-        ==========================-->
+        ======================================-->
 
         <div class="modal-body">
 
           <div class="box-body">
 
-          <!--ENTRADA PARA EL NOMBRE -->
-
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
             <div class="form-group">
-
+              
               <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
 
               </div>
 
             </div>
-
+  
           </div>
 
         </div>
 
-        <!--=========================
+        <!--=====================================
         PIE DEL MODAL
-        ==========================-->
+        ======================================-->
 
         <div class="modal-footer">
 
@@ -191,3 +191,5 @@ MODAL AGREGAR USUARIO
   </div>
 
 </div>
+
+

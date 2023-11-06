@@ -1,121 +1,121 @@
 <aside class="main-sidebar">
 
-    <section class="sidebar">
-        
-        <ul class="sidebar-menu">
+	 <section class="sidebar">
 
-            <li class="active">
+		<ul class="sidebar-menu">
 
-                <a href="inicio">
+			<li class="active">
 
-                    <i class="fa fa-home"></i>
-                    <span>Inicio</span>
+				<a href="inicio">
 
-                </a>
+					<i class="fa fa-home"></i>
+					<span>Inicio</span>
 
-            </li>
+				</a>
 
-            <li>
+			</li>
 
-                <a href="usuarios">
+			<li>
 
-                    <i class="fa fa-user"></i>
-                    <span>Usuarios</span>
+				<a href="usuarios">
 
-                </a>
+					<i class="fa fa-user"></i>
+					<span>Usuarios</span>
 
-            </li>
+				</a>
 
-            <li>
+			</li>
 
-                <a href="categorias">
+			<li>
 
-                    <i class="fa fa-th"></i>
-                    <span>Categorías</span>
+				<a href="categorias">
 
-                </a>
+					<i class="fa fa-th"></i>
+					<span>Categorías</span>
 
-            </li>
+				</a>
 
-            <li>
+			</li>
 
-                <a href="productos">
+			<li>
 
-                    <i class="fa fa-product-hunt"></i>
-                    <span>Productos</span>
+				<a href="productos">
 
-                </a>
+					<i class="fa fa-product-hunt"></i>
+					<span>Productos</span>
 
-            </li>
+				</a>
 
-            <li>
+			</li>
 
-                <a href="clientes">
+			<li>
 
-                    <i class="fa fa-users"></i>
-                    <span>Clientes</span>
+				<a href="clientes">
 
-                </a>
+					<i class="fa fa-users"></i>
+					<span>Clientes</span>
 
-            </li>
+				</a>
 
-            <li class="treeview">
+			</li>
 
-                <a href="#">
+			<li class="treeview">
 
-                    <i class="fa fa-list-ul"></i>
+				<a href="#">
 
-                    <span>Ventas</span>
+					<i class="fa fa-list-ul"></i>
+					
+					<span>Ventas</span>
+					
+					<span class="pull-right-container">
+					
+						<i class="fa fa-angle-left pull-right"></i>
 
-                    <span class="pull-right-container">
+					</span>
 
-                        <i class="fa fa-angle-left pull-right"></i>
+				</a>
 
-                    </span>
+				<ul class="treeview-menu">
+					
+					<li>
 
-                </a>
+						<a href="ventas">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Administrar ventas</span>
 
-                <ul class="treeview-menu">
+						</a>
 
-                    <li>
+					</li>
 
-                        <a href="ventas">
+					<li>
 
-                            <i class="fa fa-circle-o"></i>
-                            <span>Administrar ventas</span>
+						<a href="crear-venta">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Crear venta</span>
 
-                        </a>
+						</a>
 
-                    </li>
+					</li>
 
-                    <li>
+					<li>
 
-                        <a href="crear-venta">
+						<a href="reportes">
+							
+							<i class="fa fa-circle-o"></i>
+							<span>Reporte de ventas</span>
 
-                            <i class="fa fa-circle-o"></i>
-                            <span>Crear Venta</span>
+						</a>
 
-                        </a>
+					</li>
 
-                    </li>
+				</ul>
 
-                    <li>
+			</li>
 
-                        <a href="reportes">
+		</ul>
 
-                            <i class="fa fa-circle-o"></i>
-                            <span>Reporte de ventas</span>
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </li>
-
-        </ul>
-
-    </section>
+	 </section>
 
 </aside>

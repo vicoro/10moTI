@@ -1,10 +1,10 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-
+    
     <h1>
       
-      Pagina no encontrada
+      Página no encontrada
     
     </h1>
 
@@ -12,8 +12,8 @@
       
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Pagina no encontrada</li>
-
+      <li class="active">Página no encontrada</li>
+    
     </ol>
 
   </section>
@@ -21,28 +21,28 @@
   <section class="content">
 
     <div class="error-page">
+      
+      <h2 class="headline text-primary">404</h2> 
 
-        <h2 class="headline text-primary">404</h2>
+      <div class="error-content">
 
-        <div class="error-content">
+        <h3>
 
-            <h3>
-                
-                <i class="fa fa-warning text-primary"></i>
+          <i class="fa fa-warning text-primary"></i> 
 
-                Ooops! Página no encontrada.
-            
-            </h3>
+          Ooops! Página no encontrada.
 
-            <p>
+        </h3>
 
-            Ingresa al menú lateral y allí podrás encontrar las páginas disponibles. También puedes regresar haciendo <a href="inicio">click aquí.</a>
-            
-            </p>
+        <p>
+        
+           Ingresa al menú lateral y allí podrás encontrar las páginas disponibles. También puedes regresar haciendo <a href="inicio">click aquí.</a>
+        
+        </p>
 
-        </div>
-    </div>
-  
+      </div>
+
+    </div>  
 
   </section>
 
