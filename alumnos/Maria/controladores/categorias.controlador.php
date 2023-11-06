@@ -2,192 +2,180 @@
 
 class ControladorCategorias{
 
-    /*======================================
-            CREAR CATEGORIA
-    ====================================== */
+	/*=============================================
+	CREAR CATEGORIAS
+	=============================================*/
 
-    static public function ctrCrearCategoria(){
+	static public function ctrCrearCategoria(){
 
-        if (isset($_POST["nuevaCategoria"])){
+		if(isset($_POST["nuevaCategoria"])){
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
 
-                $tabla = "categorias";
+				$tabla = "categorias";
 
-                $datos = $_POST["nuevaCategoria"];
+				$datos = $_POST["nuevaCategoria"];
 
-                $respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
+				$respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
 
-                if ($respuesta == "ok") {
-                    
-                    echo '<script>
+				if($respuesta == "ok"){
 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡La categoría ha sido guardada correctamente!",
-                        showConfirmButton: true,
-                        confirmButtonText: "Cerrar",
-                        closeOnConfirm: false
-                        }).then((result)=>{
-                            if(result.value){
+					echo'<script>
 
-                                window.location = "categorias";
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido guardada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-                                }
+									window.location = "categorias";
 
-                            })
+									}
+								})
 
-                    </script>';
+					</script>';
 
-                }
+				}
 
-            }else{
-                
-      			echo '<script>
 
-      				swal.fire({
-      					icon: "error",
-      					title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
-      					showConfirmButton: true,
-      					confirmButtonText: "Cerrar",
-      					closeOnConfirm: false
-      					}).then((result)=>{
-      						if(result.value){
+			}else{
 
-      							window.location = "categorias";
+				echo'<script>
 
-      						}
+					swal({
+						  type: "error",
+						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
 
-      					})
+							window.location = "categorias";
 
-      			</script>';
+							}
+						})
 
-            }
+			  	</script>';
 
-        }
+			}
 
-    }
+		}
 
-    /*======================================
-            MOSTRAR CATEGORIA
-    ====================================== */
+	}
 
-    static public function ctrMostrarCategorias($item, $valor){
+	/*=============================================
+	MOSTRAR CATEGORIAS
+	=============================================*/
 
-        $tabla = "categorias";
+	static public function ctrMostrarCategorias($item, $valor){
 
-        $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+		$tabla = "categorias";
 
-        return $respuesta;
+		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
 
-    }
+		return $respuesta;
+	
+	}
 
-    /*======================================
-            EDITAR  CATEGORIA
-    ====================================== */
+	/*=============================================
+	EDITAR CATEGORIA
+	=============================================*/
 
-    static public function ctrEditarCategoria(){
+	static public function ctrEditarCategoria(){
 
-        if (isset($_POST["editarCategoria"])){
+		if(isset($_POST["editarCategoria"])){
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
 
-                $tabla = "categorias";
+				$tabla = "categorias";
 
-                $datos = array("categoria"=>$_POST["editarCategoria"], "id"=>$_POST["idCategoria"]);
+				$datos = array("categoria"=>$_POST["editarCategoria"],
+							   "id"=>$_POST["idCategoria"]);
 
-                $respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
+				$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
 
-                if ($respuesta == "ok") {
-                    
-                    echo '<script>
+				if($respuesta == "ok"){
 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡La categoría ha sido editada correctamente!",
-                        showConfirmButton: true,
-                        confirmButtonText: "Cerrar",
-                        closeOnConfirm: false
-                        }).then((result)=>{
-                            if(result.value){
+					echo'<script>
 
-                                window.location = "categorias";
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido cambiada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-                                }
+									window.location = "categorias";
 
-                            })
+									}
+								})
 
-                    </script>';
+					</script>';
 
-                }
+				}
 
-            }else{
-                
-      			echo '<script>
 
-      				swal.fire({
-      					icon: "error",
-      					title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
-      					showConfirmButton: true,
-      					confirmButtonText: "Cerrar",
-      					closeOnConfirm: false
-      					}).then((result)=>{
-      						if(result.value){
+			}else{
 
-      							window.location = "categorias";
+				echo'<script>
 
-      						}
+					swal({
+						  type: "error",
+						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
 
-      					})
+							window.location = "categorias";
 
-      			</script>';
+							}
+						})
 
-            }
+			  	</script>';
 
-        }
+			}
 
-    }
+		}
 
-    /*======================================
-            BORRAR CATEGORIA
-    ====================================== */
+	}
 
-    static public function ctrBorrarCategoria(){
+	/*=============================================
+	BORRAR CATEGORIA
+	=============================================*/
 
-        if (isset($_GET["idCategoria"])){
-            
-        $tabla = "Categorias";
-        $datos = $_GET["idCategoria"];
+	static public function ctrBorrarCategoria(){
 
-        $respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
+		if(isset($_GET["idCategoria"])){
 
-         if ($respuesta == "ok") {
+			$tabla ="Categorias";
+			$datos = $_GET["idCategoria"];
 
-            echo '<script>
+			$respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
 
-            swal.fire({
-                icon: "success",
-                title: "¡La categoría ha sido borrada correctamente!",
-                showConfirmButton: true,
-                confirmButtonText: "Cerrar",
-                closeOnConfirm: false
-                }).then((result)=>{
-                    if(result.value){
+			if($respuesta == "ok"){
 
-                        window.location = "categorias";
+				echo'<script>
 
-                        }
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido borrada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-                    })
+									window.location = "categorias";
 
-            </script>';
+									}
+								})
 
-            }
-
-        }
-
-    }
-
+					</script>';
+			}
+		}
+		
+	}
 }
-
-

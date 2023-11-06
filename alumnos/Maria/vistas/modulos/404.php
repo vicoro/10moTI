@@ -1,47 +1,49 @@
+<div class="content-wrapper">
 
-  <div class="content-wrapper">
-
-    <section class="content-header">
-
-      <h1>
-
+  <section class="content-header">
+    
+    <h1>
+      
       Página no encontrada
+    
+    </h1>
 
-      </h1>
+    <ol class="breadcrumb">
+      
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      
+      <li class="active">Página no encontrada</li>
+    
+    </ol>
 
-      <ol class="breadcrumb">
+  </section>
 
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+  <section class="content">
 
-        <li class="active"> Página no encontrada </li>
+    <div class="error-page">
+      
+      <h2 class="headline text-primary">404</h2> 
 
-      </ol>
+      <div class="error-content">
 
-    </section>
+        <h3>
 
-    <section class="content">
+          <i class="fa fa-warning text-primary"></i> 
 
-      <div class="error-page">
+          Ooops! Página no encontrada.
 
-        <h2 class="headline text-primary">404</h2>
+        </h3>
 
-        <div class="error-content">
-          <h3>
-            <i class="fa fa-warning text-primary"></i>
-            Ooops! Página no encontrada.
-          </h3>
-
-          <p>
-            Ingrese al menú lateral y ahí podrá encontrar las páginas
-             disponibles. Tambien puedes regresar haciendo <a href="inicio">Click aquí.</a>
-          </p>
-          
-        </div>
+        <p>
+        
+           Ingresa al menú lateral y allí podrás encontrar las páginas disponibles. También puedes regresar haciendo <a href="inicio">click aquí.</a>
+        
+        </p>
 
       </div>
 
-     
+    </div>  
 
-    </section>
-    
-  </div>
+  </section>
+
+</div>
