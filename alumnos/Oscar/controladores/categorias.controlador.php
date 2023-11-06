@@ -2,205 +2,180 @@
 
 class ControladorCategorias{
 
-    /*===========================
-    CREAR CATEGORIAS
-    ===========================*/
+	/*=============================================
+	CREAR CATEGORIAS
+	=============================================*/
 
-    static public function ctrCrearCategoria(){
+	static public function ctrCrearCategoria(){
 
-        if (isset($_POST["nuevaCategoria"])) {
+		if(isset($_POST["nuevaCategoria"])){
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
 
-                $tabla="categorias";
+				$tabla = "categorias";
 
-                $datos = $_POST["nuevaCategoria"];
+				$datos = $_POST["nuevaCategoria"];
 
-                $respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
+				$respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
 
-                if($respuesta == "ok"){
+				if($respuesta == "ok"){
 
-                    echo '<script>
-                        
-                    Swal.fire({
+					echo'<script>
 
-                        icon: "success",
-                        title: "¡La categoría ha sido guardada correctamente!",
-                        text: "",
-                        showConfirmButton: true,
-                        confirmButtonText: "OK",
-                        closeOnConfirm: false
-                    }).then((result) => {
-                        if (result.value) {
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido guardada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-                            window.location = "categorias";
+									window.location = "categorias";
 
-                        }
-                    })
-            
-                  </script>';
+									}
+								})
 
-                }
+					</script>';
 
+				}
 
-            }else{
 
-                echo '<script>
-                        
-                        Swal.fire({
+			}else{
 
-                            icon: "error",
-                            title: "¡La categoría no puede ir vacía o tener caracteres especiales!",
-                            text: "",
-                            showConfirmButton: true,
-                            confirmButtonText: "OK",
-                            closeOnConfirm: false
-                        }).then((result) => {
-                            if (result.value) {
+				echo'<script>
 
-                                window.location = "categorias";
+					swal({
+						  type: "error",
+						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
 
-                            }
-                        })
-                
-                      </script>';
+							window.location = "categorias";
 
+							}
+						})
 
+			  	</script>';
 
-            }
+			}
 
+		}
 
-        }
+	}
 
-    }
+	/*=============================================
+	MOSTRAR CATEGORIAS
+	=============================================*/
 
-    /*===========================
-    MOSTRAR CATEGORIAS
-    ===========================*/
+	static public function ctrMostrarCategorias($item, $valor){
 
-    static public function ctrMostrarCategorias($item, $valor){
+		$tabla = "categorias";
 
-        $tabla="categorias";
+		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
 
-        $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+		return $respuesta;
+	
+	}
 
-        return $respuesta;
-    }
+	/*=============================================
+	EDITAR CATEGORIA
+	=============================================*/
 
-     /*===========================
-    EDITAR CATEGORIAS
-    ===========================*/
+	static public function ctrEditarCategoria(){
 
-    static public function ctrEditarCategoria(){
+		if(isset($_POST["editarCategoria"])){
 
-        if (isset($_POST["editarCategoria"])) {
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
+				$tabla = "categorias";
 
-                $tabla="categorias";
+				$datos = array("categoria"=>$_POST["editarCategoria"],
+							   "id"=>$_POST["idCategoria"]);
 
-                $datos = array("categoria"=>$_POST["editarCategoria"],
-                                "id"=>$_POST["idCategoria"]);
+				$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
 
-                $respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
+				if($respuesta == "ok"){
 
-                if($respuesta == "ok"){
+					echo'<script>
 
-                    echo '<script>
-                        
-                    Swal.fire({
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido cambiada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-                        icon: "success",
-                        title: "¡La categoría ha sido modificada correctamente!",
-                        text: "",
-                        showConfirmButton: true,
-                        confirmButtonText: "OK",
-                        closeOnConfirm: false
-                    }).then((result) => {
-                        if (result.value) {
+									window.location = "categorias";
 
-                            window.location = "categorias";
+									}
+								})
 
-                        }
-                    })
-            
-                  </script>';
+					</script>';
 
-                }
+				}
 
 
-            }else{
+			}else{
 
-                echo '<script>
-                        
-                        Swal.fire({
+				echo'<script>
 
-                            icon: "error",
-                            title: "¡La categoría no puede ir vacía o tener caracteres especiales!",
-                            text: "",
-                            showConfirmButton: true,
-                            confirmButtonText: "OK",
-                            closeOnConfirm: false
-                        }).then((result) => {
-                            if (result.value) {
+					swal({
+						  type: "error",
+						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
 
-                                window.location = "categorias";
+							window.location = "categorias";
 
-                            }
-                        })
-                
-                      </script>';
+							}
+						})
 
+			  	</script>';
 
+			}
 
-            }
+		}
 
+	}
 
-        }
+	/*=============================================
+	BORRAR CATEGORIA
+	=============================================*/
 
-    }
+	static public function ctrBorrarCategoria(){
 
-    /*===========================
-    BORRAR CATEGORIAS
-    ===========================*/
-    static public function ctrBorrarCategoria(){
+		if(isset($_GET["idCategoria"])){
 
-        if(isset($_GET["idCategoria"])){
+			$tabla ="Categorias";
+			$datos = $_GET["idCategoria"];
 
-            $tabla ="Categorias";
-            $datos = $_GET["idCategoria"];
-          
-            $respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
+			$respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
 
-            if($respuesta == "ok"){
+			if($respuesta == "ok"){
 
-                        echo '<script>
-                    
-                                Swal.fire({
+				echo'<script>
 
-                                    icon: "success",
-                                    title: "¡La categoría ha sido borrada correctamente!",
-                                    text: " ",
-                                    showConfirmButton: true,
-                                    confirmButtonText: "OK",
-                                    closeOnConfirm: false
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido borrada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-                                }).then((result)=>{
+									window.location = "categorias";
 
-                                    if(result.value){
+									}
+								})
 
-                                        window.location = "categorias";
-
-                                    }
-
-                                });
-                        
-                            </script>';
-
-                }
-
-          }
-
-    }
-
+					</script>';
+			}
+		}
+		
+	}
 }

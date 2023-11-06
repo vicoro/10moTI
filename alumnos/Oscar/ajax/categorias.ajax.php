@@ -5,29 +5,30 @@ require_once "../modelos/categorias.modelo.php";
 
 class AjaxCategorias{
 
-    /*===============================
-    EDITAR CATEGORIA 
-    ================================*/
+	/*=============================================
+	EDITAR CATEGORÍA
+	=============================================*/	
 
-    public $idCategoria;
+	public $idCategoria;
 
-    public function ajaxEditarCategoria(){
+	public function ajaxEditarCategoria(){
 
-        $item = "id";
-        $valor = $this->idCategoria;
+		$item = "id";
+		$valor = $this->idCategoria;
 
-        $respuesta = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+		$respuesta = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
-        echo json_encode($respuesta);
-    }
+		echo json_encode($respuesta);
+
+	}
 }
 
-    /*===============================
-    EDITAR CATEGORIA 
-    ================================*/
+/*=============================================
+EDITAR CATEGORÍA
+=============================================*/	
 if(isset($_POST["idCategoria"])){
 
-    $categoria = new AjaxCategorias();
-    $categoria -> idCategoria = $_POST["idCategoria"];
-    $categoria -> ajaxEditarCategoria();
+	$categoria = new AjaxCategorias();
+	$categoria -> idCategoria = $_POST["idCategoria"];
+	$categoria -> ajaxEditarCategoria();
 }

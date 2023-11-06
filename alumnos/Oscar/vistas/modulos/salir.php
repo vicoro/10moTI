@@ -2,9 +2,8 @@
 
 session_destroy();
 
-
 echo '<script>
-                        
-window.location = "ingreso";
+
+	window.location = "ingreso";
 
 </script>';
