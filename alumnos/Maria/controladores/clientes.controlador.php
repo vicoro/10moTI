@@ -121,7 +121,7 @@ class ControladorClientes{
 
 					swal({
 						  type: "success",
-						  title: "El cliente ha sido editado correctamente",
+						  title: "El cliente ha sido cambiado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -202,6 +202,4 @@ class ControladorClientes{
 	}
 
 }
-
-
 

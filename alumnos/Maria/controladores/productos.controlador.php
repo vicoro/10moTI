@@ -117,7 +117,7 @@ class ControladorProductos{
 							  title: "El producto ha sido guardado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
-							  }).then(function(result){
+							  }).then((result) => {
 										if (result.value) {
 
 										window.location = "productos";
@@ -139,7 +139,7 @@ class ControladorProductos{
 						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
+						  }).then((result) => {
 							if (result.value) {
 
 							window.location = "productos";
@@ -266,7 +266,7 @@ class ControladorProductos{
 							  title: "El producto ha sido editado correctamente",
 							  showConfirmButton: true,
 							  confirmButtonText: "Cerrar"
-							  }).then(function(result){
+							  }).then((result) => {
 										if (result.value) {
 
 										window.location = "productos";
@@ -288,7 +288,7 @@ class ControladorProductos{
 						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
+						  }).then((result) => {
 							if (result.value) {
 
 							window.location = "productos";
@@ -330,7 +330,7 @@ class ControladorProductos{
 					  title: "El producto ha sido borrado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
-					  }).then(function(result){
+					  }).then((result) => {
 								if (result.value) {
 
 								window.location = "productos";
