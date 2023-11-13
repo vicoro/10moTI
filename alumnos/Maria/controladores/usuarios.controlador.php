@@ -6,7 +6,7 @@ class ControladorUsuarios{
 	INGRESO DE USUARIO
 	=============================================*/
 
-	static public function  ctrIngresoUsuario(){
+	static public function ctrIngresoUsuario(){
 
 		if(isset($_POST["ingUsuario"])){
 
