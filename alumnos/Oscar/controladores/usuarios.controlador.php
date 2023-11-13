@@ -64,53 +64,15 @@ class ControladorUsuarios{
 						
 					}else{
 
-						echo '<script>
-
-						swal({
-	
-							type: "info",
-							title: "¡Usuario no activo!",
-							showConfirmButton: true,
-							confirmButtonText: "Cerrar"
-	
-						}).then(function(result){
-	
-							if(result.value){
-							
-								window.location = "ingreso";
-	
-							}
-	
-						});
-					
-	
-						</script>';
+						echo '<br>
+							<div class="alert alert-danger">El usuario aún no está activado</div>';
 
 					}		
 
 				}else{
 
-					echo '<script>
+					echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
 
-					swal({
-
-						type: "error",
-						title: "¡Usuario o contraseña incorrectos!",
-						showConfirmButton: true,
-						confirmButtonText: "Cerrar"
-
-					}).then(function(result){
-
-						if(result.value){
-						
-							window.location = "ingreso";
-
-						}
-
-					});
-				
-
-					</script>';
 				}
 
 			}	
