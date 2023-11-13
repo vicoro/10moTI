@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-11-2023 a las 19:55:54
+-- Tiempo de generación: 13-11-2023 a las 02:59:43
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -68,7 +68,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`) VALUES
-(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 0);
+(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 1);
 
 -- --------------------------------------------------------
 
@@ -94,9 +94,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`) VALUES
-(1, 1, '101', 'Lapiz', 'vistas/img/productos/101/225.png', 20, 1500, 1950, 0),
-(2, 1, '102', 'Lapicero Bic', 'vistas/img/productos/102/145.png', 20, 4500, 5400, 0),
-(3, 1, '103', 'Colores', 'vistas/img/productos/103/906.png', 20, 3500, 3675, 0),
+(1, 1, '101', 'Lapiz', 'vistas/img/productos/101/225.png', 21, 1500, 1950, -1),
+(2, 1, '102', 'Lapicero Bic', 'vistas/img/productos/102/145.png', 22, 4500, 5400, -2),
+(3, 1, '103', 'Colores', 'vistas/img/productos/103/906.png', 21, 3500, 3675, -1),
 (6, 2, '106', 'Hojas Blancas', 'vistas/img/productos/106/599.png', 15, 2000, 2540, 0),
 (7, 2, '107', 'Opalina', 'vistas/img/productos/107/208.png', 20, 4000, 5400, 0),
 (8, 2, '108', 'Hojas de color', 'vistas/img/productos/108/828.png', 20, 2950, 3363, 0),
@@ -134,12 +134,38 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-11-05 14:49:18', '2023-09-25 21:44:06'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-11-12 21:52:36', '2023-09-25 21:44:06'),
 (24, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auLd2AxYsA/2BbmGKNk2kMChC3oj7V0Ca', 'Vendedor', 'vistas/img/usuarios/ana/875.png', 1, '2023-10-05 13:07:01', '2023-10-05 17:55:48'),
 (27, 'Carmen Pineda', 'carmen', '$2a$07$asxx54ahjppf45sd87a5auU.7XJYQrZScY96s9MPVNgh6SXWD95a6', 'Administrador', 'vistas/img/usuarios/carmen/371.jpg', 1, '2023-10-26 18:15:05', '2023-10-26 23:13:53'),
 (34, 'Oscar Arellano', 'oscar', '$2a$07$asxx54ahjppf45sd87a5au/bu4Ick41GRhbhIEPg0Nvajd22gNWwy', 'Administrador', 'vistas/img/usuarios/oscar/980.png', 1, '0000-00-00 00:00:00', '2023-10-27 00:36:03'),
-(35, 'Elder Pineda', 'elder', '$2a$07$asxx54ahjppf45sd87a5auK/kW3QvJdE4err5ztrzFX6f26VpOuge', 'Especial', 'vistas/img/usuarios/elder/413.jpg', 1, '2023-10-26 19:47:41', '2023-10-27 00:47:21'),
+(35, 'Elder Pineda', 'elder', '$2a$07$asxx54ahjppf45sd87a5auK/kW3QvJdE4err5ztrzFX6f26VpOuge', 'Especial', 'vistas/img/usuarios/elder/413.jpg', 1, '2023-11-06 11:31:47', '2023-10-27 00:47:21'),
 (36, 'maria velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5au/styESZTpqxpFPzgJF99YaIo877LNdy', 'Administrador', '', 0, '0000-00-00 00:00:00', '2023-10-30 00:46:55');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `codigo` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_vendedor` int(11) NOT NULL,
+  `productos` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `impuesto` float NOT NULL,
+  `neto` float NOT NULL,
+  `total` float NOT NULL,
+  `metodo_pago` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_vendedor`, `productos`, `impuesto`, `neto`, `total`, `metodo_pago`) VALUES
+(18, 10002, 1, 35, '[{\"id\":\"1\",\"descripcion\":\"Lapiz\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1950\",\"total\":\"1950\"}]', 39, 1950, 1989, 'TC-56765456');
 
 --
 -- Índices para tablas volcadas
@@ -170,6 +196,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -196,6 +228,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
