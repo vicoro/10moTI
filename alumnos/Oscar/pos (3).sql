@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-11-2023 a las 19:44:15
+-- Tiempo de generación: 13-11-2023 a las 03:11:56
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -68,7 +68,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`) VALUES
-(4, 'Jose Hernandez', 126355, 'Jose@hotmail.com', '(767) 101-5589', 'Altamirano', '2000-06-18', 0);
+(4, 'Jose Hernandez', 126355, 'Jose@hotmail.com', '(767) 101-5589', 'Altamirano', '2000-06-18', 9);
 
 -- --------------------------------------------------------
 
@@ -94,14 +94,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`) VALUES
-(1, 1, '101', 'Aspiradpra indstrial', '', 20, 1500, 2000, 0),
-(2, 1, '102', 'Plato flotante', '', 20, 4500, 5000, 0),
+(1, 1, '101', 'Aspiradora industrial', '', 20, 1500, 2000, 0),
+(2, 1, '102', 'Plato flotante', '', 21, 4500, 5000, -1),
 (3, 1, '103', 'Compresor de aire', '', 20, 3500, 4000, 0),
-(4, 1, '104', 'cortadora de adobe', '', 20, 3200, 3700, 0),
-(5, 1, '105', 'cortadora de piso', '', 20, 1500, 2000, 0),
-(7, 2, '107', 'Extractor de aire', '', 20, 4000, 4500, 0),
-(8, 2, '108', 'Guada?adora', '', 20, 3000, 3500, 0),
-(9, 2, '109', 'Hidrolavadora Electrica', '', 20, 3600, 4100, 0),
+(4, 1, '104', 'cortadora de adobe', '', 19, 3200, 3700, 1),
+(5, 1, '105', 'cortadora de piso', '', 19, 1500, 2000, 1),
+(7, 2, '107', 'Extractor de aire', '', 19, 4000, 4500, 1),
+(8, 2, '108', 'Guadañadora', '', 19, 3000, 3500, 1),
+(9, 2, '109', 'Hidrolavadora Electrica', '', 19, 3600, 4100, 1),
 (10, 2, '110', 'Hidrolavadora Gasolina', '', 20, 1500, 2000, 0),
 (12, 3, '112', 'Motobomba electrica', '', 20, 1700, 2200, 0),
 (13, 3, '113', 'cierra circulaer', '', 20, 2500, 3000, 0),
@@ -115,7 +115,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`
 (21, 5, '121', 'Martillo cincel', '', 20, 3200, 3700, 0),
 (22, 5, '122', 'Taladro percutor', '', 20, 1200, 1700, 0),
 (23, 5, '123', 'Bascula', '', 20, 2150, 2600, 0),
-(24, 5, '124', 'Pasamanos de seguridad', '', 20, 4500, 5000, 0);
+(24, 5, '124', 'Pasamanos de seguridad', '', 20, 4500, 5000, 0),
+(29, 1, '106', 'prueba1', 'vistas/img/productos/default/anonymous.png', 20, 1800, 2520, 0),
+(30, 1, '107', 'prueba2', 'vistas/img/productos/default/anonymous.png', 20, 2000, 2800, 0);
 
 -- --------------------------------------------------------
 
@@ -140,8 +142,34 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(29, 'Kathi Damian', 'kathi', '$2a$07$asxx54ahjppf45sd87a5autG1WnWbwacrrXefZLvKHd1uuLEasji2', 'Administrador', 'vistas/img/usuarios/kathi/521.jpg', 1, '2023-11-04 14:40:01', '2023-11-04 19:19:08'),
-(31, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Especial', '', 1, '2023-11-04 14:25:15', '2023-11-04 19:21:36');
+(29, 'Kathi Damian', 'kathi', '$2a$07$asxx54ahjppf45sd87a5autG1WnWbwacrrXefZLvKHd1uuLEasji2', 'Administrador', 'vistas/img/usuarios/kathi/521.jpg', 1, '2023-11-12 22:03:42', '2023-11-04 19:19:08'),
+(33, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', '', 1, '0000-00-00 00:00:00', '2023-11-11 22:23:34');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `codigo` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_vendedor` int(11) NOT NULL,
+  `productos` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `impuesto` float NOT NULL,
+  `neto` float NOT NULL,
+  `total` float NOT NULL,
+  `metodo_pago` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_vendedor`, `productos`, `impuesto`, `neto`, `total`, `metodo_pago`) VALUES
+(18, 10002, 4, 29, '[{\"id\":\"1\",\"descripcion\":\"Aspiradpra indstrial\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"2000\",\"total\":\"2000\"}]', 40, 2000, 2040, 'Efectivo');
 
 --
 -- Índices para tablas volcadas
@@ -172,6 +200,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -185,19 +219,25 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

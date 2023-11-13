@@ -9,7 +9,7 @@
 				<a href="inicio">
 
 					<i class="fa fa-home"></i>
-					<span>Inicio</span>
+					<span id="menu2">Inicio</span>
 
 				</a>
 
@@ -20,7 +20,7 @@
 				<a href="usuarios">
 
 					<i class="fa fa-user"></i>
-					<span>Usuarios</span>
+					<span id="menu2">Usuarios</span>
 
 				</a>
 
@@ -31,7 +31,7 @@
 				<a href="categorias">
 
 					<i class="fa fa-th"></i>
-					<span>Categorías</span>
+					<span id="menu2">Categorías</span>
 
 				</a>
 
@@ -42,7 +42,7 @@
 				<a href="productos">
 
 					<i class="fa fa-product-hunt"></i>
-					<span>Productos</span>
+					<span id="menu2">Productos</span>
 
 				</a>
 
@@ -53,7 +53,7 @@
 				<a href="clientes">
 
 					<i class="fa fa-users"></i>
-					<span>Clientes</span>
+					<span id="menu2">Clientes</span>
 
 				</a>
 
@@ -65,13 +65,13 @@
 
 					<i class="fa fa-list-ul"></i>
 					
-					<span>Ventas</span>
+					<span id="menu2">Ventas</span>
 					
-					<span class="pull-right-container">
+					<!--<span class="pull-right-container">
 					
 						<i class="fa fa-angle-left pull-right"></i>
 
-					</span>
+					</span>-->
 
 				</a>
 
@@ -79,10 +79,10 @@
 					
 					<li>
 
-						<a href="ventas">
+						<a href="ventas" id="menu">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Administrar ventas</span>
+							<span id="menu2"  style="font-size: 16px;">Administrar ventas</span>
 
 						</a>
 
@@ -90,10 +90,10 @@
 
 					<li>
 
-						<a href="crear-venta">
+						<a href="crear-venta" id="menu">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Crear venta</span>
+							<span id="menu2" style="font-size: 16px;">Crear venta</span>
 
 						</a>
 
@@ -101,10 +101,10 @@
 
 					<li>
 
-						<a href="reportes">
+						<a href="reportes" id="menu">
 							
 							<i class="fa fa-circle-o"></i>
-							<span>Reporte de ventas</span>
+							<span id="menu2" style="font-size: 16px;">Reporte de ventas</span>
 
 						</a>
 
