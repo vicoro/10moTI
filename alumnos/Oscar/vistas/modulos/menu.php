@@ -4,12 +4,16 @@
 
 		<ul class="sidebar-menu">
 
-			<li class="active">
+		<?php
+
+		if($_SESSION["perfil"] == "Administrador"){
+
+			echo '<li class="active">
 
 				<a href="inicio">
 
 					<i class="fa fa-home"></i>
-					<span id="menu2">Inicio</span>
+					<span>Inicio</span>
 
 				</a>
 
@@ -20,18 +24,22 @@
 				<a href="usuarios">
 
 					<i class="fa fa-user"></i>
-					<span id="menu2">Usuarios</span>
+					<span>Usuarios</span>
 
 				</a>
 
-			</li>
+			</li>';
 
-			<li>
+		}
+
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
+
+			echo '<li>
 
 				<a href="categorias">
 
 					<i class="fa fa-th"></i>
-					<span id="menu2">Categorías</span>
+					<span>Categorías</span>
 
 				</a>
 
@@ -42,36 +50,44 @@
 				<a href="productos">
 
 					<i class="fa fa-product-hunt"></i>
-					<span id="menu2">Productos</span>
+					<span>Productos</span>
 
 				</a>
 
-			</li>
+			</li>';
 
-			<li>
+		}
+
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
+
+			echo '<li>
 
 				<a href="clientes">
 
 					<i class="fa fa-users"></i>
-					<span id="menu2">Clientes</span>
+					<span>Clientes</span>
 
 				</a>
 
-			</li>
+			</li>';
 
-			<li class="treeview">
+		}
+
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
+
+			echo '<li class="treeview">
 
 				<a href="#">
 
 					<i class="fa fa-list-ul"></i>
 					
-					<span id="menu2">Ventas</span>
+					<span>Ventas</span>
 					
-					<!--<span class="pull-right-container">
+					<span class="pull-right-container">
 					
 						<i class="fa fa-angle-left pull-right"></i>
 
-					</span>-->
+					</span>
 
 				</a>
 
@@ -79,10 +95,10 @@
 					
 					<li>
 
-						<a href="ventas" id="menu">
+						<a href="ventas">
 							
 							<i class="fa fa-circle-o"></i>
-							<span id="menu2"  style="font-size: 16px;">Administrar ventas</span>
+							<span>Administrar ventas</span>
 
 						</a>
 
@@ -90,29 +106,39 @@
 
 					<li>
 
-						<a href="crear-venta" id="menu">
+						<a href="crear-venta">
 							
 							<i class="fa fa-circle-o"></i>
-							<span id="menu2" style="font-size: 16px;">Crear venta</span>
+							<span>Crear venta</span>
 
 						</a>
 
-					</li>
+					</li>';
 
-					<li>
+					if($_SESSION["perfil"] == "Administrador"){
 
-						<a href="reportes" id="menu">
+					echo '<li>
+
+						<a href="reportes">
 							
 							<i class="fa fa-circle-o"></i>
-							<span id="menu2" style="font-size: 16px;">Reporte de ventas</span>
+							<span>Reporte de ventas</span>
 
 						</a>
 
-					</li>
+					</li>';
 
-				</ul>
+					}
 
-			</li>
+				
+
+				echo '</ul>
+
+			</li>';
+
+		}
+
+		?>
 
 		</ul>
 

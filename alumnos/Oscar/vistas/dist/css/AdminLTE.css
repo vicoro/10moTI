@@ -292,36 +292,6 @@ a:focus {
   padding: 2px 3px;
   line-height: .9;
 }
-/*-------oscar------
-#menu{
-  left: -5px;
-  width: 180px;
-}
-
-ul li a:hover:before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #000;
-}
-
-ul li a:hover {
-  color: #000;
-  box-shadow: 0 0 5px #000;
-  text-shadow: 0 0 5px #000;
-}
-
-ul li span{
-  color: white;
-  box-shadow: 0 0 5px #000;
-  text-shadow: 0 0 5px #000;
-}
-
-#menu2{
-  color: white;
-  box-shadow: none;
-  text-shadow: 0 0 5px #000;
-}
-
-/*---------------termina----*/
 .main-header .logo {
   -webkit-transition: width 0.3s ease-in-out;
   -o-transition: width 0.3s ease-in-out;
