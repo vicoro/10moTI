@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-11-2023 a las 02:59:43
+-- Tiempo de generación: 04-12-2023 a las 02:34:53
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categorias` (
   `id` int(11) NOT NULL,
-  `categoria` text COLLATE utf8_spanish_ci NOT NULL,
+  `categoria` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -53,11 +53,11 @@ INSERT INTO `categorias` (`id`, `categoria`) VALUES
 
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
-  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `documento` int(11) NOT NULL,
-  `email` text COLLATE utf8_spanish_ci NOT NULL,
-  `telefono` text COLLATE utf8_spanish_ci NOT NULL,
-  `direccion` text COLLATE utf8_spanish_ci NOT NULL,
+  `email` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `compras` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -68,7 +68,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`) VALUES
-(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 1);
+(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 3),
+(2, 'Erick Pineda', 2345433, 'erick@gmail.com', '(767) 101-7569', 'Carrera 34 #22 -22', '1998-12-13', 0);
 
 -- --------------------------------------------------------
 
@@ -79,9 +80,9 @@ INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direc
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
-  `codigo` text COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
-  `imagen` text COLLATE utf8_spanish_ci NOT NULL,
+  `codigo` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `stock` int(11) NOT NULL,
   `precio_compra` float NOT NULL,
   `precio_venta` float NOT NULL,
@@ -105,9 +106,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`
 (11, 2, '111', 'Hojas milimetricas', 'vistas/img/productos/111/204.png', 10, 100, 130, 0),
 (12, 3, '112', 'Engrapadora', 'vistas/img/productos/112/670.png', 20, 1700, 2200, 0),
 (13, 3, '113', 'Perforadora', 'vistas/img/productos/113/190.png', 20, 2500, 3000, 0),
-(14, 3, '114', 'Grapas', 'vistas/img/productos/114/361.png', 20, 9600, 10000, 0),
-(15, 3, '115', 'Clips', 'vistas/img/productos/115/587.png', 20, 1980, 2200, 0),
-(27, 5, '501', 'Cinta canela', 'vistas/img/productos/501/413.png', 20, 800, 1040, 0),
+(14, 3, '114', 'Grapas', 'vistas/img/productos/114/361.png', 19, 9600, 10000, 1),
+(15, 3, '115', 'Clips', 'vistas/img/productos/115/587.png', 19, 1980, 2200, 2),
+(27, 5, '501', 'Cinta canela', 'vistas/img/productos/501/413.png', 19, 800, 1040, 1),
 (28, 5, '502', 'Cinta adhesiva', 'vistas/img/productos/502/423.png', 10, 300, 420, 0),
 (29, 4, '401', 'Carpeta', 'vistas/img/productos/401/318.png', 18, 245, 343, 0);
 
@@ -119,11 +120,11 @@ INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
-  `usuario` text COLLATE utf8_spanish_ci NOT NULL,
-  `password` text COLLATE utf8_spanish_ci NOT NULL,
-  `perfil` text COLLATE utf8_spanish_ci NOT NULL,
-  `foto` text COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `usuario` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `password` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `perfil` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `foto` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `estado` int(11) NOT NULL,
   `ultimo_login` datetime NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -134,7 +135,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-11-12 21:52:36', '2023-09-25 21:44:06'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-12-03 21:29:42', '2023-09-25 21:44:06'),
 (24, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auLd2AxYsA/2BbmGKNk2kMChC3oj7V0Ca', 'Vendedor', 'vistas/img/usuarios/ana/875.png', 1, '2023-10-05 13:07:01', '2023-10-05 17:55:48'),
 (27, 'Carmen Pineda', 'carmen', '$2a$07$asxx54ahjppf45sd87a5auU.7XJYQrZScY96s9MPVNgh6SXWD95a6', 'Administrador', 'vistas/img/usuarios/carmen/371.jpg', 1, '2023-10-26 18:15:05', '2023-10-26 23:13:53'),
 (34, 'Oscar Arellano', 'oscar', '$2a$07$asxx54ahjppf45sd87a5au/bu4Ick41GRhbhIEPg0Nvajd22gNWwy', 'Administrador', 'vistas/img/usuarios/oscar/980.png', 1, '0000-00-00 00:00:00', '2023-10-27 00:36:03'),
@@ -165,7 +166,8 @@ CREATE TABLE `ventas` (
 --
 
 INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_vendedor`, `productos`, `impuesto`, `neto`, `total`, `metodo_pago`) VALUES
-(18, 10002, 1, 35, '[{\"id\":\"1\",\"descripcion\":\"Lapiz\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1950\",\"total\":\"1950\"}]', 39, 1950, 1989, 'TC-56765456');
+(18, 10002, 1, 35, '[{\"id\":\"1\",\"descripcion\":\"Lapiz\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1950\",\"total\":\"1950\"}]', 39, 1950, 1989, 'TC-56765456'),
+(19, 10003, 1, 1, '[{\"id\":\"15\",\"descripcion\":\"Clips\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"2200\",\"total\":\"2200\"},{\"id\":\"14\",\"descripcion\":\"Grapas\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"10000\",\"total\":\"10000\"}]', 610, 12200, 12810, 'Efectivo');
 
 --
 -- Índices para tablas volcadas
@@ -215,7 +217,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -233,7 +235,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
