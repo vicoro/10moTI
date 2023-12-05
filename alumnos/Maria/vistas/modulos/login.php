@@ -4,8 +4,7 @@
   
   <div class="login-logo">
 
-    <!---cambiar la imagen del formulario---->
-   <img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding: 30px 80px 0px 80px"> 
+    <img src="vistas/img/plantilla/logo.png" class="img-responsive" style="padding:30px 80px 0px 80px">
 
   </div>
 
@@ -42,7 +41,7 @@
       <?php
 
         $login = new ControladorUsuarios();
-        $login->ctrIngresoUsuario();
+        $login -> ctrIngresoUsuario();
         
       ?>
 

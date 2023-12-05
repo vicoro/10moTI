@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-11-2023 a las 03:37:32
+-- Tiempo de generación: 04-12-2023 a las 02:51:43
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -70,7 +70,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`, `ultima_compra`, `fecha`) VALUES
-(1, 'Juan Villegas', 8161123, 'juan@hotmail.com', '(301) 391-3456', 'Calle 45F #23 - 4s', '2023-11-03', 3, '2023-11-13 04:24:54', '2023-11-04 04:40:00'),
+(1, 'Juan Villegas', 8161123, 'juan@hotmail.com', '(301) 391-3456', 'Calle 45F #23 - 4s', '2023-11-03', 6, '2023-11-13 04:39:00', '2023-11-04 04:40:00'),
 (5, 'Maria Velazquez', 101, 'maria@hotmail.com', '(767) 104-7745', 'Calle Agustin de Iturbide #18 Col. Lazaro Cardenas ', '1997-05-30', 2, '2023-11-12 05:31:45', '2023-11-06 01:04:26'),
 (7, 'Angelica López', 8161456, 'angelica@gamil.com', '(331) 345-6789', 'Carretera 34 #25 - 45', '1982-07-09', -3, '2023-11-13 04:26:47', '2023-11-06 01:24:20'),
 (8, 'Luis Manra', 12345, 'luis@hotmail.com', '(732) 120-2434', 'Arcelia', '1997-01-29', 4, '2023-11-13 03:55:54', '2023-11-12 04:36:46');
@@ -99,10 +99,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`, `fecha`) VALUES
-(34, 1, '101', 'Anillo Gera MX', 'vistas/img/productos/101/115.jpg', 12, 250, 350, 3, '2023-10-29 02:36:58'),
-(35, 1, '102', 'Cadena plata', 'vistas/img/productos/102/620.jpg', 76, 150, 210, 4, '2023-10-29 02:46:55'),
+(34, 1, '101', 'Anillo Gera MX', 'vistas/img/productos/101/115.jpg', 11, 250, 350, 4, '2023-10-29 02:36:58'),
+(35, 1, '102', 'Cadena plata', 'vistas/img/productos/102/620.jpg', 75, 150, 210, 5, '2023-10-29 02:46:55'),
 (36, 1, '103', 'Juego de cadena y aretes', 'vistas/img/productos/103/227.jpg', 49, 250, 350, 1, '2023-10-29 02:48:43'),
-(37, 1, '104', 'Gorra varios colores', 'vistas/img/productos/104/538.jpg', 70, 150, 210, 0, '2023-10-29 02:49:33'),
+(37, 1, '104', 'Gorra varios colores', 'vistas/img/productos/104/538.jpg', 69, 150, 210, 1, '2023-10-29 02:49:33'),
 (38, 1, '105', 'Gorro varios colores', 'vistas/img/productos/105/421.jpg', 50, 150, 210, 1, '2023-10-29 02:50:27'),
 (39, 2, '201', 'Chamarra Negra', 'vistas/img/productos/201/258.jpg', 299, 250, 350, 1, '2023-10-29 02:54:45'),
 (40, 2, '202', 'Chamarra Blanca', 'vistas/img/productos/202/583.jpg', 300, 250, 350, 0, '2023-10-29 02:55:15'),
@@ -155,7 +155,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`,
 (33, 'Juan Fernando Urrego', 'juan', '$2a$07$asxx54ahjppf45sd87a5aub7LdtrTXnn.ZQdALsthndsluPeTbv.a', 'Vendedor', 'vistas/img/usuarios/juan/213.png', 1, '2023-10-17 18:57:30', '2023-10-07 20:05:30'),
 (34, 'Julio Gomez', 'julio', '$2a$07$asxx54ahjppf45sd87a5auRajNP0zeqOkB9Qda.dSiTb2/n.wAC/2', 'Especial', 'vistas/img/usuarios/julio/585.jpg', 1, '2023-10-28 00:32:14', '2023-10-07 20:06:13'),
 (35, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auzGfz9GaOjSPJ5jEDpHii9vSQEEqY1Zm', 'Vendedor', 'vistas/img/usuarios/ana/101.jpg', 1, '2023-11-12 22:25:53', '2023-10-07 20:06:58'),
-(43, 'Maria Velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Administrador', 'vistas/img/usuarios/maria/278.jpg', 1, '2023-11-12 22:27:41', '2023-10-28 05:33:19');
+(43, 'Maria Velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Administrador', 'vistas/img/usuarios/maria/278.jpg', 1, '2023-12-03 21:34:01', '2023-10-28 05:33:19');
 
 -- --------------------------------------------------------
 
@@ -183,7 +183,8 @@ CREATE TABLE `ventas` (
 INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_vendedor`, `productos`, `impuesto`, `neto`, `total`, `metodo_pago`) VALUES
 (18, 10002, 8, 43, '[{\"id\":\"34\",\"descripcion\":\"Anillo Gera MX\",\"cantidad\":\"1\",\"stock\":\"13\",\"precio\":\"350\",\"total\":\"350\"},{\"id\":\"35\",\"descripcion\":\"Cadena plata\",\"cantidad\":\"1\",\"stock\":\"78\",\"precio\":\"210\",\"total\":\"210\"}]', 56, 560, 616, 'TC-4152313914894683'),
 (19, 10003, 1, 43, '[{\"id\":\"35\",\"descripcion\":\"Cadena plata\",\"cantidad\":\"1\",\"stock\":\"77\",\"precio\":\"210\",\"total\":\"210\"},{\"id\":\"34\",\"descripcion\":\"Anillo Gera MX\",\"cantidad\":\"1\",\"stock\":\"12\",\"precio\":\"350\",\"total\":\"350\"},{\"id\":\"36\",\"descripcion\":\"Juego de cadena y aretes\",\"cantidad\":\"1\",\"stock\":\"49\",\"precio\":\"350\",\"total\":\"350\"}]', 91, 910, 1001, 'TD-4152313914894683'),
-(20, 10004, 7, 35, '[{\"id\":\"35\",\"descripcion\":\"Cadena plata\",\"cantidad\":\"1\",\"stock\":\"76\",\"precio\":\"210\",\"total\":\"210\"},{\"id\":\"38\",\"descripcion\":\"Gorro varios colores\",\"cantidad\":\"1\",\"stock\":\"4\",\"precio\":\"210\",\"total\":\"210\"}]', 42, 420, 462, 'Efectivo');
+(20, 10004, 7, 35, '[{\"id\":\"35\",\"descripcion\":\"Cadena plata\",\"cantidad\":\"1\",\"stock\":\"76\",\"precio\":\"210\",\"total\":\"210\"},{\"id\":\"38\",\"descripcion\":\"Gorro varios colores\",\"cantidad\":\"1\",\"stock\":\"4\",\"precio\":\"210\",\"total\":\"210\"}]', 42, 420, 462, 'Efectivo'),
+(21, 10005, 1, 43, '[{\"id\":\"34\",\"descripcion\":\"Anillo Gera MX\",\"cantidad\":\"1\",\"stock\":\"11\",\"precio\":\"350\",\"total\":\"350\"},{\"id\":\"37\",\"descripcion\":\"Gorra varios colores\",\"cantidad\":\"1\",\"stock\":\"69\",\"precio\":\"210\",\"total\":\"210\"},{\"id\":\"35\",\"descripcion\":\"Cadena plata\",\"cantidad\":\"1\",\"stock\":\"75\",\"precio\":\"210\",\"total\":\"210\"}]', 77, 770, 847, 'Efectivo');
 
 --
 -- Índices para tablas volcadas
@@ -251,7 +252,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
