@@ -1,3 +1,5 @@
+
+
 /*=============================================
 SUBIENDO LA FOTO DEL USUARIO
 =============================================*/
@@ -78,7 +80,11 @@ $(".tablas").on("click", ".btnEditarUsuario", function(){
 
 			if(respuesta["foto"] != ""){
 
-				$(".previsualizar").attr("src", respuesta["foto"]);
+				$(".previsualizarEditar").attr("src", respuesta["foto"]);
+
+			}else{
+
+				$(".previsualizarEditar").attr("src", "vistas/img/usuarios/default/anonymous.png");
 
 			}
 
@@ -110,7 +116,7 @@ $(".tablas").on("click", ".btnActivar", function(){
       processData: false,
       success: function(respuesta){
 
-	      	if(window.matchMedia("(max-width:767px)").matches){
+      		if(window.matchMedia("(max-width:767px)").matches){
 
 	      		 swal({
 			      title: "El usuario ha sido actualizado",
@@ -127,10 +133,10 @@ $(".tablas").on("click", ".btnActivar", function(){
 				});
 
 	      	}
-      
-		}
 
-	})
+      }
+
+  	})
 
   	if(estadoUsuario == 0){
 
