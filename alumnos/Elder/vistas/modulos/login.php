@@ -1,52 +1,61 @@
-<div id="back"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login JavaScript</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="vistas/plugins/estilo.css">
+</head>
+<body>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="vistas/img/plantilla/login.png" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form method="post">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">¡INGRESA AL SISTEMA!</p>
+                    </div>
 
-<div class="login-box">
-  
-  <div class="login-logo">
+                    <!-- Usuario input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="user" class="form-control form-control-lg" placeholder="Ingresa tu usuario" name="ingUsuario" required />
+                        <label class="form-label" for="user">Usuario</label>
+                    </div>
 
-    <img src="vistas/img/plantilla/logo-blanco-bloque.png" class="img-responsive" style="padding:30px 100px 0px 100px">
+                    <!-- Contraseña input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" id="password" class="form-control form-control-lg" placeholder="Ingresa contraseña" name="ingPassword" required />
+                        <label class="form-label" for="password">Contraseña</label>
+                    </div>
 
-  </div>
+                   
 
-  <div class="login-box-body">
-
-    <p class="login-box-msg">Ingresar al sistema</p>
-
-    <form method="post">
-
-      <div class="form-group has-feedback">
-
-        <input type="text" class="form-control" placeholder="Usuario" name="ingUsuario" required>
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-
-      </div>
-
-      <div class="form-group has-feedback">
-
-        <input type="password" class="form-control" placeholder="Contraseña" name="ingPassword" required>
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      
-      </div>
-
-      <div class="row">
-       
-        <div class="col-xs-4">
-
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-        
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" id="ingresar">INGRESAR</button>
+                    </div>
+                </form>
+            </div>
         </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary" id="copyright">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+            Copyright © 2023. Todos los derechos reservados.
+        </div>
+        <!-- Copyright -->
+    </div>
+</section>
 
-      </div>
+<?php
+    $login = new ControladorUsuarios();
+    $login->ctrIngresoUsuario();
+?>
 
-      <?php
+</body>
+</html>
 
-        $login = new ControladorUsuarios();
-        $login -> ctrIngresoUsuario();
-        
-      ?>
-
-    </form>
-
-  </div>
-
-</div>

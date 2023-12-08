@@ -25,9 +25,13 @@ $totalProductos = count($productos);
     
     <div class="inner">
       
-      <h3>$<?php echo number_format($ventas["total"],2); ?></h3>
+    <a href="crear-venta" class="small-box-footer">
+  
+    <h3 style="color: white;">Crear Venta</h3>
 
-      <p>Ventas</p>
+</a>
+  
+      <p>.</p>
     
     </div>
     
@@ -38,8 +42,9 @@ $totalProductos = count($productos);
     </div>
     
     <a href="ventas" class="small-box-footer">
+
+    <h7>Ventas: $<?php echo number_format($ventas["total"],2); ?></h7>
       
-      Más info <i class="fa fa-arrow-circle-right"></i>
     
     </a>
 

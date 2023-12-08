@@ -4,9 +4,9 @@
     
     <h1>
       
-      Tablero
+      Software Punto de Venta
       
-      <small>Panel de Control</small>
+      <small>Papelería Mundo de Papel</small>
     
     </h1>
 
