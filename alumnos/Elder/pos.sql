@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-12-2023 a las 02:34:53
+-- Tiempo de generación: 08-12-2023 a las 15:46:28
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -60,6 +60,7 @@ CREATE TABLE `clientes` (
   `direccion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `compras` int(11) NOT NULL,
+  `ultima_compra` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -67,9 +68,9 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`) VALUES
-(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 3),
-(2, 'Erick Pineda', 2345433, 'erick@gmail.com', '(767) 101-7569', 'Carrera 34 #22 -22', '1998-12-13', 0);
+INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `fecha_nacimiento`, `compras`, `ultima_compra`) VALUES
+(1, 'Angelica Lopez', 2345432, 'angelica13@gmail.com', '(767) 101-1989', 'Carrera 13 #22 -23', '1989-12-09', 3, '0000-00-00 00:00:00'),
+(2, 'Erick Pineda', 2345433, 'erick@gmail.com', '(767) 101-7569', 'Carrera 34 #22 -22', '1998-12-13', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -135,11 +136,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-12-03 21:29:42', '2023-09-25 21:44:06'),
-(24, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auLd2AxYsA/2BbmGKNk2kMChC3oj7V0Ca', 'Vendedor', 'vistas/img/usuarios/ana/875.png', 1, '2023-10-05 13:07:01', '2023-10-05 17:55:48'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/538.jpg', 1, '2023-12-08 10:43:21', '2023-09-25 21:44:06'),
+(24, 'Ana Gonzalez', 'ana', '$2a$07$asxx54ahjppf45sd87a5auLd2AxYsA/2BbmGKNk2kMChC3oj7V0Ca', 'Vendedor', 'vistas/img/usuarios/ana/875.png', 1, '2023-12-07 23:24:45', '2023-10-05 17:55:48'),
 (27, 'Carmen Pineda', 'carmen', '$2a$07$asxx54ahjppf45sd87a5auU.7XJYQrZScY96s9MPVNgh6SXWD95a6', 'Administrador', 'vistas/img/usuarios/carmen/371.jpg', 1, '2023-10-26 18:15:05', '2023-10-26 23:13:53'),
 (34, 'Oscar Arellano', 'oscar', '$2a$07$asxx54ahjppf45sd87a5au/bu4Ick41GRhbhIEPg0Nvajd22gNWwy', 'Administrador', 'vistas/img/usuarios/oscar/980.png', 1, '0000-00-00 00:00:00', '2023-10-27 00:36:03'),
-(35, 'Elder Pineda', 'elder', '$2a$07$asxx54ahjppf45sd87a5auK/kW3QvJdE4err5ztrzFX6f26VpOuge', 'Especial', 'vistas/img/usuarios/elder/413.jpg', 1, '2023-11-06 11:31:47', '2023-10-27 00:47:21'),
+(35, 'Elder Pineda', 'elder', '$2a$07$asxx54ahjppf45sd87a5auK/kW3QvJdE4err5ztrzFX6f26VpOuge', 'Especial', 'vistas/img/usuarios/elder/413.jpg', 1, '2023-12-07 23:23:55', '2023-10-27 00:47:21'),
 (36, 'maria velazquez', 'maria', '$2a$07$asxx54ahjppf45sd87a5au/styESZTpqxpFPzgJF99YaIo877LNdy', 'Administrador', '', 0, '0000-00-00 00:00:00', '2023-10-30 00:46:55');
 
 -- --------------------------------------------------------
